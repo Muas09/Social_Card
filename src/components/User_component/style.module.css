@@ -1,0 +1,74 @@
+/* .user-card {
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-card img {
+    max-width: 100px;
+    height: auto;
+  }
+
+  .user-card h2 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .user-card button {
+    margin-top: 8px;
+    padding: 4px 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  } */
+  /* User.css */
+  .userContainer {
+    display: flex;
+    width: 30%;
+    min-height: 90%; /* Đảm bảo khung có chiều rộng tối thiểu */
+    height: 90%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto; /* Hiển thị thanh cuộn dọc khi nội dung vượt quá chiều cao */
+  }
+  
+  .userImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .userDetails {
+    flex-grow: 1;
+  }
+  
+  .userName {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .userDate {
+    color: #888;
+    margin: 0;
+  }
+  
+  .userContent {
+    margin-top: 10px;
+  }
+  
+  .userButtons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
