@@ -64,7 +64,13 @@ const SearchAddUserForm = ({ addUser, handleSearch }) => {
           type="text"
           placeholder="Search name"
           onChange={(e) => handleSearch(e.target.value)}
-        />
+        /> <div>
+          <img
+              className="image"
+              src="Assets/Icon_Search.svg"
+              alt="Icon"
+            />
+        </div>
       </div>
     </div>
   );

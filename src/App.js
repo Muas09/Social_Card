@@ -12,11 +12,9 @@ const App = () => {
     setUsers([...users, newUser]);
   };
 
-  const handleEditUser = (editedUser) => {
-  };
+  const handleEditUser = (editedUser) => {};
 
-  const handleDeleteUser = (userToDelete) => {
-  };
+  const handleDeleteUser = (userToDelete) => {};
 
   const filteredUsers = users.filter((user) =>
     user.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -52,14 +50,8 @@ const App = () => {
                 <div className="username">Phu Nguyen</div>
                 <div className="datetime">14/08/2023</div>
               </div>
-              <img
-                className="IconEdit"src="Assets/Icon_Edit.svg"alt=""
-              />
-              <img
-                className="IconDelete"
-                src="Assets/Icon_Delete.svg"
-                alt=""
-              />
+              <img className="IconEdit" src="Assets/Icon_Edit.svg" alt="" />
+              <img className="IconDelete" src="Assets/Icon_Delete.svg" alt="" />
             </div>
             <div className="content">
               It is a long established fact that a reader will be distracted by
@@ -76,17 +68,11 @@ const App = () => {
                 alt="Avatar 2"
               />
               <div>
-              <div className="username">Varen</div>
-              <div className="datetime">14/08/2023</div>
+                <div className="username">Varen</div>
+                <div className="datetime">14/08/2023</div>
               </div>
-              <img
-                className="IconEdit"src="Assets/Icon_Edit.svg"alt=""
-              />
-              <img
-                className="IconDelete"
-                src="Assets/Icon_Delete.svg"
-                alt=""
-              />
+              <img className="IconEdit" src="Assets/Icon_Edit.svg" alt="" />
+              <img className="IconDelete" src="Assets/Icon_Delete.svg" alt="" />
             </div>
             <div className="content">
               Lập một form để tạo mới 1 Social Card , trong card sẽ chứa các
@@ -103,17 +89,11 @@ const App = () => {
             <div className="UserTitle">
               <img className="avatar" src="Assets/Avatar_Mio.svg" />
               <div>
-              <div className="username">Mio</div>
-              <div className="datetime">14/08/2023</div>
+                <div className="username">Mio</div>
+                <div className="datetime">14/08/2023</div>
               </div>
-              <img
-                className="IconEdit"src="Assets/Icon_Edit.svg"alt=""
-              />
-              <img
-                className="IconDelete"
-                src="Assets/Icon_Delete.svg"
-                alt=""
-              />
+              <img className="IconEdit" src="Assets/Icon_Edit.svg" alt="" />
+              <img className="IconDelete" src="Assets/Icon_Delete.svg" alt="" />
             </div>
             <div className="content">
               Next, you select one property. It doesn’t matter which one you
@@ -125,6 +105,20 @@ const App = () => {
               src="Assets/Image_elephant.svg"
               alt="Image 3"
             />
+          </div>
+        </div>
+        <div className="NotFound">
+          <img
+            className="image"
+            src="Assets/No_Results_Found.svg"
+            alt="Not found"
+          />
+          <div>
+            <p className="Results">No Results Found</p>
+            <p className="No_Content">
+              No content matched your criteria. Try searching for something
+              else.
+            </p>
           </div>
         </div>
       </div>
