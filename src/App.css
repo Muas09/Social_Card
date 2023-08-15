@@ -16,56 +16,97 @@
   font-weight: 400;
   padding: 32px 0px 58px 0px;
   line-height: 47px; /* 134.286% */
-}
-.user-cards {
+}/* Assuming you have defined the necessary styles for the rest of your app */
+
+/* Container for user posts */
+.user-lists {
   display: flex;
   flex-wrap: wrap;
-  
- 
+  gap: 20px;
 }
 
-.user-card {
+/* Individual social card */
+.post {
   border: 1px solid #ccc;
-  border-radius: 8px;
   padding: 10px;
-  margin: 10px;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
+  width: calc(33.33% - 20px);
+  /* Adjust the width and spacing as needed */
+  box-sizing: border-box;
 }
 
-.user-card img {
+/* Avatar */
+.avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-bottom: 10px;
+  object-fit: cover;
 }
 
-.user-info {
-  flex: 1;
+/* Username */
+.username {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Datetime */
+.datetime {
+  color: #888;
+  margin-top: 5px;
+}
+
+/* Content */
+.content {
+  margin-top: 10px;
+}
+
+/* Image */
+.image {
+  max-width: 100%;
+  margin-top: 10px;
+}
+.post_user {
+  margin-top: 100px;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
 
-.user-name {
-  font-weight: bold;
-  font-size: 16px;
+
+.post {
+  display: flex;
+  flex-direction: column;
+  
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
-.post-time {
-  color: #666;
-  font-size: 12px;
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  /* Sử dụng border-radius để làm hình vuông có góc bo tròn */
+  margin-bottom: 10px;
+  object-fit: cover;
+  /* Đảm bảo hình ảnh bị cắt hoặc co dãn để lấp đầy khung hình vuông */
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.datetime {
+  color: #888;
+  margin-bottom: 5px;
 }
 
 .content {
-  margin-top: 10px;
-  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.user-image {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  margin-top: 10px;
+.image {
+  max-width: 100%;
+  height: auto;
 }
