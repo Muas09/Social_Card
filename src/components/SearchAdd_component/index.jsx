@@ -23,38 +23,7 @@ const SearchAddUserForm = ({ addUser, handleSearch }) => {
   return (
     <div className={styles.SearchAddUserForm}>
       <form onSubmit={handleSubmit} className={styles.addUserForm}>
-        {/* <div>
-          <div className={styles.formGroup}>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={user.name}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="content">Contents:</label>
-            <input
-              type="text"
-              id="content"
-              name="content"
-              value={user.content}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="image">File Image:</label>
-            <input
-              type="file"
-              id="image"
-              name="image"
-              accept="image/*"
-              onChange={handleImageChange}
-            />
-          </div>
-        </div> */}
+    
         <button type="submit" className={styles.submitButton}>
           Add new
         </button>
