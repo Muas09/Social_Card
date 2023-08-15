@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
 }
-.title_card {
+.titleCard {
   color: #000;
   text-align: center;
   font-family: Segoe UI;
@@ -16,21 +16,17 @@
   font-weight: 400;
   padding: 32px 0px 58px 0px;
   line-height: 47px; /* 134.286% */
-}/* Assuming you have defined the necessary styles for the rest of your app */
-
-/* Container for user posts */
-.user-lists {
+}
+.userLists {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-/* Individual social card */
 .post {
-  border: 1px solid #ccc;
+  border: none;
   padding: 10px;
   width: calc(33.33% - 20px);
-  /* Adjust the width and spacing as needed */
   box-sizing: border-box;
 }
 
@@ -64,49 +60,84 @@
   max-width: 100%;
   margin-top: 10px;
 }
-.post_user {
+.postUser {
   margin-top: 100px;
   display: flex;
   justify-content: space-between;
 }
 
-
 .post {
   display: flex;
   flex-direction: column;
-  
+
   margin: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border: none;
+  
   background-color: #fff;
 }
 
 .avatar {
   width: 80px;
   height: 80px;
-  border-radius: 10px;
-  /* Sử dụng border-radius để làm hình vuông có góc bo tròn */
+  border-radius: 1px;
+
   margin-bottom: 10px;
   object-fit: cover;
-  /* Đảm bảo hình ảnh bị cắt hoặc co dãn để lấp đầy khung hình vuông */
 }
 
 .username {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin: 0;
+  padding: 0;
 }
 
 .datetime {
-  color: #888;
-  margin-bottom: 5px;
-}
+  color: #5B7083;
+  font-family: Segoe UI;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.5px
+  }
 
 .content {
   margin-bottom: 10px;
-}
+  color: #000;
+  font-family: Segoe UI;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; 
+  }
 
 .image {
   max-width: 100%;
   height: auto;
+}
+.UserTitle {
+  display: flex;
+  gap: 15px;
+}
+
+.avatar {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+}
+.UserName {
+  margin: 0;
+  padding: 0;
+}
+.UserInfo {
+  display: flex;
+  flex-direction: column;
+}
+.IconEdit {
+  margin-left: 137px;
+}
+.IconEdit,
+.IconDelete {
+  width: 20px;
+  height: 20px;
 }
