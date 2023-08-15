@@ -1,21 +1,29 @@
-import React from 'react';
-import styles from "./style.module.css";
+import React from "react";
 
-const User = ({ user, handleEdit, handleDelete }) => {
+const UserComponent = ({ user }) => {
   return (
-    <div className={styles.userContainer}>
-      <img src={user.image} alt={user.name} className={styles.userImage} />
-      <div className={styles.userDetails}>
-        <h2 className={styles.userName}>{user.name}</h2>
-        <p className={styles.userDate}>{user.date}</p>
-        <p className={styles.userContent}>{user.content}</p>
-        <div className={styles.userButtons}>
-          <button onClick={() => handleEdit(user)}>Sửa</button>
-          <button onClick={() => handleDelete(user)}>Xóa</button>
+    <div className="post">
+      <div className="UserTitle">
+        <div className="AvatarUser">
+          <img
+            className="avatar"
+            src={user.avatar}
+            alt={`Avatar of ${user.name}`}
+          />
+          <div className="UserName">
+            <div className="username">{user.name}</div>
+            <div className="datetime">{user.datetime}</div>
+          </div>
+        </div>
+        <div className="IconEditDelete">
+          <img className="IconEdit" src="Assets/Icon_Edit.svg" alt="" />
+          <img className="IconDelete" src="Assets/Icon_Delete.svg" alt="" />
         </div>
       </div>
+      <div className="content">{user.content}</div>
+      <img className="image" src={user.image} alt={`Image related to ${user.name}`} />
     </div>
   );
 };
 
-export default User;
+export default UserComponent;

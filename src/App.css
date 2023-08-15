@@ -3,14 +3,59 @@
   height: 100vh;
   padding: 0 4%;
   margin: 0 auto;
-  display: block;
   justify-content: center;
   align-items: center;
 }
+
+/* Định nghĩa @font-face nên đặt ở phần đầu CSS */
+@font-face {
+  font-family: "Segoe UI";
+  font-weight: 200;
+  src: local("Segoe UI Light");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-weight: 300;
+  src: local("Segoe UI Semilight");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-weight: 400;
+  src: local("Segoe UI");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-weight: 600;
+  src: local("Segoe UI Semibold");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Segoe UI Italic");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Segoe UI Bold Italic");
+}
+
 .titleCard {
   color: #000;
   text-align: center;
-  font-family: Segoe UI;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 35px;
   font-style: normal;
   font-weight: 400;
@@ -23,12 +68,7 @@
   gap: 20px;
 }
 
-.post {
-  border: none;
-  padding: 10px;
-  width: calc(33.33% - 20px);
-  box-sizing: border-box;
-}
+
 
 /* Avatar */
 .avatar {
@@ -40,72 +80,71 @@
 
 /* Username */
 .username {
-  font-weight: bold;
+  color: #000;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
   margin-top: 5px;
+  margin: 0;
+  padding: 0;
 }
-
-*/
 .datetime {
   color: #888;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
-.content {
-  margin-top: 10px;
-}
+
 
 .image {
   max-width: 100%;
   margin-top: 10px;
 }
+
 .postUser {
+  border: none;
   margin-top: 100px;
   display: flex;
+  gap: 88px;
   justify-content: space-between;
 }
 
 .post {
   display: flex;
   flex-direction: column;
-  margin: 20px;
-  padding: 20px;
   border: none;
+  width: 380px;
   background-color: #fff;
 }
 
 .avatar {
-  width: 80px;
-  height: 80px;
   border-radius: 1px;
-
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   object-fit: cover;
-}
-
-.username {
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
+  text-align: center;
+  width: 50px;
+  height: 50px;
 }
 
 .datetime {
-  color: #5B7083;
-  font-family: Segoe UI;
+  color: #5b7083;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 22.5px
-  }
+  line-height: 22.5px;
+}
 
 .content {
-  margin-bottom: 10px;
+  font-size: 15px;
+  margin-bottom: 15px;
   color: #000;
-  font-family: Segoe UI;
-  font-size: 14px;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; 
-  }
+  line-height: 20px;
+}
 
 .image {
   max-width: 100%;
@@ -113,24 +152,21 @@
 }
 .UserTitle {
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
 }
 
-.avatar {
-  text-align: center;
-  width: 50px;
-  height: 50px;
-}
 .UserName {
   margin: 0;
   padding: 0;
 }
-.UserInfo {
+.AvatarUser{
   display: flex;
-  flex-direction: column;
+  gap:15px;
 }
-.IconEdit {
-  margin-left: 137px;
+.IconEditDelete{
+  display: flex;
+  gap:17px;  
+  
 }
 .IconEdit,
 .IconDelete {
@@ -138,16 +174,12 @@
   height: 20px;
 }
 
-
-/* -------- */
-
 .NotFound {
-  display: flex;
-  gap: 20px;
+  display: flex; 
   align-items: center;
   text-align: center;
-  flex-direction: column;  
-  gap: 20px;
+  flex-direction: column;
+
 }
 
 .NotFound .image {
@@ -155,23 +187,20 @@
   height: 186px;
 }
 
-.NotFound p {
-  font-size: 16px;
-  margin: 0;
-}
-.Results{
-  color: #064EBC;
+.Results {
+  margin: 20px 0 10px 0;
+  color: #064ebc;
   text-align: center;
-  font-family: Segoe UI;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: 25px;
 }
-.No_Content{
+.No_Content {
   color: #000;
   text-align: center;
-  font-family: Segoe UI;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
