@@ -174,35 +174,143 @@
   height: 20px;
 }
 
-.NotFound {
-  display: flex; 
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-
+/* Model  */
+/* Model Delete */
+body {
+  font-family: Arial, sans-serif;
 }
 
-.NotFound .image {
-  width: 250px;
-  height: 186px;
+.contModelDelete {
+  max-width: 514px;
+  margin: 0 auto;
+  padding: 20px;
 }
+.btnCancel,
+.btnSave{
+  text-align: center;
+  font: normal normal bold 13px/17px Segoe UI;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  opacity: 1;
+  width: 76px;
+  height: 43px;
+  border: none;
+}
+.btnCancel{
+    margin-left: 20px;
+    background: #d9d9d9 0% 0% no-repeat padding-box;
+}
+.btnSave{
+    margin-left: 299px;
+    background: #064ebc 0% 0% no-repeat padding-box;
+}
+.modalTitle {
+  text-align: center;
+  font: normal normal bold 20px/27px Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+.modalBody {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.modalBody p {
+  text-align: center;
+  font: normal normal normal 16px/21px Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+hr {
+  width: 425px;
+  height: 0px;
+  /* UI Properties */
+  border: 1px solid #d9d9d9;
+  opacity: 1;
+}
+.modalContent {
+  background-color: #fff;
+  width: 514px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+/* blog */
 
-.Results {
-  margin: 20px 0 10px 0;
-  color: #064ebc;
-  text-align: center;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 25px;
-}
-.No_Content {
-  color: #000;
-  text-align: center;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 25px;
-}
+
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  .Blog {
+    width: 1336px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+  }
+  .Blog h1{
+    text-align: center;
+  }
+  .avatarBlog {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  .postHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  .postContent {
+    margin-bottom: 10px;
+  }
+  .postImage {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .actionButtons {
+    display: flex;
+  }
+  .likeButton, .commentButton {
+   
+  }
+  .commentInput {
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .postButton {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }

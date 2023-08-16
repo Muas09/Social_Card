@@ -188,3 +188,36 @@ form textarea {
 .inputContainer input {
   flex-grow: 1; /* Allow input to grow and fill available space */
 }
+
+.NotFound {
+  display: flex; 
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+}
+
+.NotFound .imageNotFound {
+  width: 250px;
+  height: 186px;
+}
+
+.Results {
+  margin: 20px 0 10px 0;
+  color: #064ebc;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+}
+.NoContent {
+  color: #000;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+}

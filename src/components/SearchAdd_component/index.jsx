@@ -21,8 +21,9 @@ const SearchAddUserForm = ({ addUser, handleSearch }) => {
   };
 
   return (
-    <div className={styles.SearchAddUserForm}>
-      <form onSubmit={handleSubmit} className={styles.addUserForm}>
+    <div >
+     <div className={styles.SearchAddUserForm}>
+     <form onSubmit={handleSubmit} className={styles.addUserForm}>
         <button type="submit" className={styles.submitButton}>
           Add new
         </button>
@@ -41,7 +42,8 @@ const SearchAddUserForm = ({ addUser, handleSearch }) => {
           />
         </div>
       </div>
-      {showModal && (
+     </div>
+      {/* {showModal && (
         <div className={styles.modalContainer}>
           <div className={styles.modalContent}>
             <h4 className={styles.modalTitle}>Add New User</h4>
@@ -55,7 +57,11 @@ const SearchAddUserForm = ({ addUser, handleSearch }) => {
                 </div>
                 <div className={styles.inputContainer}>
                   <label htmlFor="avatar" className={styles.avatarLabel}>
-                    <img src="upload_Files.svg" alt="" className={styles.icon} />
+                    <img
+                      src="upload_Files.svg"
+                      alt=""
+                      className={styles.icon}
+                    />
                     Upload Avatar
                   </label>
                   <input
@@ -71,10 +77,13 @@ const SearchAddUserForm = ({ addUser, handleSearch }) => {
                     name="content"
                     placeholder=""
                     onChange={handleInputChange}
-                    value={user.content}
-                  ></textarea>
+                    value={user.content}></textarea>
                   <label htmlFor="image" className={styles.avatarLabel}>
-                    <img src="upload_Files.svg" alt="" className={styles.icon} />
+                    <img
+                      src="upload_Files.svg"
+                      alt=""
+                      className={styles.icon}
+                    />
                     Upload Image
                   </label>
                   <input
@@ -94,14 +103,29 @@ const SearchAddUserForm = ({ addUser, handleSearch }) => {
               <button
                 className={styles.btnCancel}
                 id="cancelButton"
-                onClick={() => setShowModal(false)}
-              >
+                onClick={() => setShowModal(false)}>
                 Cancel
               </button>
             </div>
           </div>
         </div>
-      )}
+      )} */}
+      <div>
+        <div className={styles.NotFound}>
+          <img
+            className={styles.imageNot_Found}
+            src="Assets/No_Results_Found.svg"
+            alt="Not found"
+          />
+          <div>
+            <p className={styles.Results}>No Results Found</p>
+            <p className={styles.NoContent}>
+              No content matched your criteria. Try searching for something
+              else.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
