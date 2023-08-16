@@ -21,7 +21,6 @@
 
 label {
   display: block;
-  font-weight: bold;
   margin-bottom: 5px;
 }
 
@@ -91,6 +90,7 @@ body {
   width: 76px;
   height: 43px;
   border: none;
+  margin-right: 20px;
 }
 .btnCancel {
   text-align: center;
@@ -99,6 +99,7 @@ body {
   color: #ffffff;
   opacity: 1;
   border: none;
+  margin-right: 5px;
   width: 76px;
   height: 43px;
   background: #d9d9d9 0% 0% no-repeat padding-box;
@@ -130,9 +131,7 @@ body {
   width: 514px;
   position: absolute;
   left: -133%;
-  /* top: 159%; */
   margin-top: 99px;
-  /* margin: 100px; */
   padding: 20px;
   border-radius: 5px;
   position: relative;
@@ -159,7 +158,7 @@ form textarea {
 }
 
 .modalFooter {
-  text-align: right;     
+  text-align: right;   
   margin: 5% 0 0 65%;
 }
 
