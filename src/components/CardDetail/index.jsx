@@ -4,10 +4,10 @@ import styles from "./style.module.css";
 const Index = () => {
   return (
     <div className={styles.Container}>
-      <div className={styles.Header}>SOCIAL CARD DETAIL</div>
+      
       <div className={styles.ProfileDetail}>
         <img
-          src='Images/Varen-profile.svg'
+          src='Assets/Avatar_PhuNguyen.svg'
           alt=''
         />
         <div>
@@ -29,14 +29,14 @@ const Index = () => {
 
       <img
         className={styles.ContentImg}
-        src='Images/Content-img.png'
+        src='https://xedulichhue.com/wp-content/uploads/2018/07/dai-noi-hue-co-bao-nhieu-cua.jpg'
         alt=''
       />
 
       <div className={styles.Icon}>
         <div className={styles.IconHeart}>
           <img
-            src='Images/Heart-solid.svg'
+            src='Assets/Icon_Heart.svg'
             alt=''
           />
           2
@@ -44,7 +44,7 @@ const Index = () => {
 
         <div className={styles.IconMessage}>
           <img
-            src='Images/Message-solid.svg'
+            src='Assets/Icon_Message.svg'
             alt=''
           />
           2

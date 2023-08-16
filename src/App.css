@@ -46,6 +46,7 @@
   src: local("Segoe UI Bold Italic");
 }
 .Container {
+  width: 1164px;
   margin: 0 auto;
   margin-top: 20px;
   max-width: 1247px;

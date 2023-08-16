@@ -1,21 +1,20 @@
-.Body {
+.body {
   gap: 88px;
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
   flex-wrap: wrap;
-  max-width: 1106px;
   margin: 0 auto;
 }
 
-.Header {
+.header {
   justify-content: space-between;
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
 
-.Profile {
+.profile {
   color: #000;
   font-size: 17px;
   font-style: normal;
@@ -24,32 +23,39 @@
   align-items: center;
 }
 
-.Profile img {
+.profile img {
   margin-right: 15px;
 }
 
-.Profile,
-.EditIcon,
-.DeleteIcon {
+.profile,
+.editIcon,
+.deleteIcon {
   cursor: pointer;
 }
 
-.Profile .Birthday {
+.profile .birthday {
   margin-top: 4px;
   color: #5b7083;
   font-size: 14px;
 }
-
-.EditIcon {
+.deleteIcon{
+  width: 18px;
+  height: 21px;
+  flex-shrink: 0;
+}
+.editIcon {
   margin-right: 17px;
+  width: 18px;
+  height: 21px;
+  flex-shrink: 0;
 }
 
-.Header .Icon {
+.header .icon {
   display: flex;
   align-items: center;
 }
 
-.Description {
+.description {
   max-width: 310px;
   color: #000;
   font-size: 15px;
@@ -57,31 +63,29 @@
   margin-bottom: 15px;
 }
 
-.DescriptionMio {
+.descriptionMio {
   font-size: 14px;
 }
 
-.Content {
+.content {
   margin-bottom: 52px;
-}
-
-.SearchUndefined {
-  padding-top: 28px;
   color: #000;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 18px;
+  font-family: Segoe UI;
+  font-size: 15px;
+  font-style: normal;
   font-weight: 400;
-  margin-bottom: 50px;
+  line-height: 20px; /* 133.333% */
 }
 
-.SearchUndefined .TextResult {
+
+
+.descriptionMio .TextResult {
   color: #064ebc;
   font-size: 25px;
   margin: 20px 0 10px;
 }
 
-.SearchUndefined .Messenger {
+.descriptionMio .Messenger {
   color: #000;
   font-size: 18px;
 }

@@ -1,4 +1,4 @@
-.Navbar {
+.navbar {
   justify-content: end;
   display: flex;
   align-items: center;
@@ -6,7 +6,7 @@
   margin-bottom: 52px;
 }
 
-.BtnAdd {
+.btnAdd {
   margin-right: 20px;
   padding: 15px 30px;
   color: #fff;
@@ -18,7 +18,7 @@
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
 }
 
-.BtnAdd:hover {
+.btnAdd:hover {
   cursor: pointer;
 }
 
@@ -34,21 +34,20 @@ input[type="text"] {
   padding:15px 95px 14px 24px;
 }
 
-.Search {
+.btnSearch {
   display: flex;
   align-items: center;
 }
 
-.IconSearch {
+.iconSearch {
   position: absolute;
   right: 14px;
-}
-
-.IconSearch {
   cursor: pointer;
 }
 
-.SearchName input::placeholder {
+
+
+.earchName input::placeholder {
   color: #dfdfdf;
   font-family: Segoe UI;
   font-size: 16px;

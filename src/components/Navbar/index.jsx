@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./style.module.css";
+
 const Index = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -8,10 +9,13 @@ const Index = ({ onSearch }) => {
   };
 
   return (
-    <div className={styles.Navbar}>
-      <div className={styles.BtnAdd}>Add new</div>
-      <div className={styles.Search}>
-        <div className={styles.SearchName}>
+    
+    <div>
+      
+      <div className={styles.navbar}>
+      <div className={styles.btnAdd}>Add new</div>
+      <div className={styles.btnSearch}>
+        <div className={styles.searchName}>
           <input
             type='text'
             placeholder='Search name...'
@@ -19,14 +23,15 @@ const Index = ({ onSearch }) => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className={styles.IconSearch}>
+        <div className={styles.iconSearch}>
           <img
-            src='Images/Search-img.svg'
+            src='Assets/Icon_Search.svg'
             alt=''
             onClick={handleSearch}
           />
         </div>
       </div>
+    </div>
     </div>
   );
 };
