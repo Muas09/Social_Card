@@ -1,223 +1,57 @@
-.SearchAddUserForm {
-  display: flex;
-  align-items: flex-start;
-  margin-left: 60%;
-  gap: 20px;
-}
-.searchBar {
-  width: 100px;
-  height: 50px;
-  flex: 1;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
-}
-.addUserform {
-}
-
-.formGroup {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.searchBar {
-  width: 100px;
-  height: 50px;
+.Navbar {
+  justify-content: end;
   display: flex;
   align-items: center;
+  position: relative;
+  margin-bottom: 52px;
+}
+
+.BtnAdd {
+  margin-right: 20px;
+  padding: 15px 30px;
+  color: #fff;
+  font-family: Segoe UI;
+  font-size: 15px;
+  font-weight: 400;
   border-radius: 10px;
-  background: #fff;
+  background: #064ebc;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
 }
 
-.searchBar input[type="text"] {
-  width: 86%;
-  border: none;
-  border-radius: 5px;
-  padding: 8px;
-  margin-left: 10px;
-  outline: none;
+.BtnAdd:hover {
+  cursor: pointer;
 }
-input[type="text"]::placeholder {
+
+input[type="text"] {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  outline: none;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  padding:15px 95px 14px 24px;
+}
+
+.Search {
+  display: flex;
+  align-items: center;
+}
+
+.IconSearch {
+  position: absolute;
+  right: 14px;
+}
+
+.IconSearch {
+  cursor: pointer;
+}
+
+.SearchName input::placeholder {
   color: #dfdfdf;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Segoe UI;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
-}
-
-.submitButton {
-  padding: 15px 30px;
-  border-radius: 10px;
-  background: #184a94;
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
-  border: none;
-  color: #fff;
-  text-align: center;
-  font-family: "Segoe UI", Arial, sans-serif;
-  cursor: pointer;
-}
-.IconSearch{
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-body {
-  font-family: Arial, sans-serif;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.btnSave {
-  text-align: center;
-  font: normal normal bold 13px/17px Segoe UI;
-  letter-spacing: 0px;
-  color: #ffffff;
-  opacity: 1;
-  background: #064ebc 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
-  border-radius: 10px;
-  opacity: 1;
-  width: 76px;
-  height: 43px;
-  border: none;
-  margin-right: 20px;
-}
-.btnCancel {
-  text-align: center;
-  font: normal normal bold 13px/17px Segoe UI;
-  letter-spacing: 0px;
-  color: #ffffff;
-  opacity: 1;
-  border: none;
-  margin-right: 5px;
-  width: 76px;
-  height: 43px;
-  background: #d9d9d9 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
-  border-radius: 10px;
-  opacity: 1;
-}
-.modalTitle {
-  text-align: center;
-  font: normal normal bold 20px/27px Segoe UI;
-  letter-spacing: 0px;
-  color: #000000;
-  opacity: 1;
-}
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9999;
-}
-
-.modalContent {
-  background-color: #fff;
-  height: 379px;
-  width: 514px;
-  position: absolute;
-  left: -133%;
-  margin-top: 99px;
-  padding: 20px;
-  border-radius: 5px;
-  position: relative;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  cursor: pointer;
-}
-
-form input,
-form textarea {
-  width: 322px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.modalFooter {
-  text-align: right;   
-  margin: 5% 0 0 65%;
-}
-
- .btn {
-  margin-left: 10px;
-}
-.formInput {
-  display: flex;
-}
-.TitleContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 38px;
-}
-.inputContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-left: 70px;
-}
-
-.inputContainer label {
-  margin-right: 10px;
-  flex-shrink: 0; /* Prevent label from shrinking */
-}
-
-.inputContainer input {
-  flex-grow: 1; /* Allow input to grow and fill available space */
-}
-
-.NotFound {
-  display: flex; 
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-
-}
-
-.NotFound .imageNotFound {
-  width: 250px;
-  height: 186px;
-}
-
-.Results {
-  margin: 20px 0 10px 0;
-  color: #064ebc;
-  text-align: center;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 25px;
-}
-.NoContent {
-  color: #000;
-  text-align: center;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 25px;
 }

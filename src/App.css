@@ -1,316 +1,59 @@
-.container {
-  max-width: 1336px;
-  height: 100vh;
-  padding: 0 4%;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
+* {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* Định nghĩa @font-face nên đặt ở phần đầu CSS */
+/* @font-face {
+  font-family: "Segoe UI", Arial, sans-serif;
+  src: url('../public/fonts-family/Segoe\ UI\ Bold\ Italic.ttf') format('truetype'); 
+} */
+
 @font-face {
   font-family: "Segoe UI";
   font-weight: 200;
   src: local("Segoe UI Light");
 }
-
 @font-face {
   font-family: "Segoe UI";
   font-weight: 300;
   src: local("Segoe UI Semilight");
 }
-
 @font-face {
   font-family: "Segoe UI";
   font-weight: 400;
   src: local("Segoe UI");
 }
-
 @font-face {
   font-family: "Segoe UI";
   font-weight: 600;
   src: local("Segoe UI Semibold");
 }
-
 @font-face {
   font-family: "Segoe UI";
   font-weight: 700;
   src: local("Segoe UI Bold");
 }
-
 @font-face {
   font-family: "Segoe UI";
   font-style: italic;
   font-weight: 400;
   src: local("Segoe UI Italic");
 }
-
 @font-face {
   font-family: "Segoe UI";
   font-style: italic;
   font-weight: 700;
   src: local("Segoe UI Bold Italic");
 }
-
-.titleCard {
-  color: #000;
-  text-align: center;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 35px;
-  font-style: normal;
-  font-weight: 400;
-  padding: 32px 0px 58px 0px;
-  line-height: 47px; /* 134.286% */
-}
-.userLists {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-
-
-/* Avatar */
-.avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* Username */
-.username {
-  color: #000;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  margin-top: 5px;
-  margin: 0;
-  padding: 0;
-}
-.datetime {
-  color: #888;
-  margin-top: 4px;
-}
-
-
-
-.image {
-  max-width: 100%;
-  margin-top: 10px;
-}
-
-.postUser {
-  border: none;
-  margin-top: 100px;
-  display: flex;
-  gap: 88px;
-  justify-content: space-between;
-}
-
-.post {
-  display: flex;
-  flex-direction: column;
-  border: none;
-  width: 380px;
-  background-color: #fff;
-}
-
-.avatar {
-  border-radius: 1px;
-  margin-bottom: 15px;
-  object-fit: cover;
-  text-align: center;
-  width: 50px;
-  height: 50px;
-}
-
-.datetime {
-  color: #5b7083;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 22.5px;
-}
-
-.content {
-  font-size: 15px;
-  margin-bottom: 15px;
-  color: #000;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-}
-
-.image {
-  max-width: 100%;
-  height: auto;
-}
-.UserTitle {
-  display: flex;
-  justify-content: space-between;
-}
-
-.UserName {
-  margin: 0;
-  padding: 0;
-}
-.AvatarUser{
-  display: flex;
-  gap:15px;
-}
-.IconEditDelete{
-  display: flex;
-  gap:17px;  
-  
-}
-.IconEdit,
-.IconDelete {
-  width: 20px;
-  height: 20px;
-}
-
-/* Model  */
-/* Model Delete */
-body {
-  font-family: Arial, sans-serif;
-}
-
-.contModelDelete {
-  max-width: 514px;
+.Container {
   margin: 0 auto;
-  padding: 20px;
+  margin-top: 20px;
+  max-width: 1247px;
 }
-.btnCancel,
-.btnSave{
+
+.Title {
+  color: #000;
   text-align: center;
-  font: normal normal bold 13px/17px Segoe UI;
-  letter-spacing: 0px;
-  color: #ffffff;
-  opacity: 1;
-  box-shadow: 0px 3px 6px #00000029;
-  border-radius: 10px;
-  opacity: 1;
-  width: 76px;
-  height: 43px;
-  border: none;
-}
-.btnCancel{
-    margin-left: 20px;
-    background: #d9d9d9 0% 0% no-repeat padding-box;
-}
-.btnSave{
-    margin-left: 299px;
-    background: #064ebc 0% 0% no-repeat padding-box;
-}
-.modalTitle {
-  text-align: center;
-  font: normal normal bold 20px/27px Segoe UI;
-  letter-spacing: 0px;
-  color: #000000;
-  opacity: 1;
-}
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9999;
-}
-.modalBody {
+  font-size: 35px;
   margin-bottom: 30px;
-  text-align: center;
 }
-.modalBody p {
-  text-align: center;
-  font: normal normal normal 16px/21px Segoe UI;
-  letter-spacing: 0px;
-  color: #000000;
-  opacity: 1;
-}
-hr {
-  width: 425px;
-  height: 0px;
-  /* UI Properties */
-  border: 1px solid #d9d9d9;
-  opacity: 1;
-}
-.modalContent {
-  background-color: #fff;
-  width: 514px;
-  margin: 100px auto;
-  padding: 20px;
-  border-radius: 5px;
-  position: relative;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-/* blog */
-
-
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-  }
-  .Blog {
-    width: 1336px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-  }
-  .Blog h1{
-    text-align: center;
-  }
-  .avatarBlog {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  .postHeader {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  .userInfo {
-    display: flex;
-    flex-direction: column;
-  }
-  .postContent {
-    margin-bottom: 10px;
-  }
-  .postImage {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  .actionButtons {
-    display: flex;
-  }
-  .likeButton, .commentButton {
-   
-  }
-  .commentInput {
-    width: 50%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  .postButton {
-    margin-top: 5px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-  }
