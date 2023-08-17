@@ -27,7 +27,7 @@ if (window.innerWidth < 768) {
   customStyles.content.width = "80%";
   customStyles.content.height = "auto";
   customStyles.content.maxHeight = "80vh";
-          
+
   customStyles.content.boxShadow = "0px 2px 4px #00000029";
 }
 
@@ -87,15 +87,15 @@ const Index = () => {
               </div>
             </div>
             <a href="/Detail">
-            <div
-              className={`${styles.description} ${
-                index === 2 ? styles.descriptionMio : ""
-              }`}>
-              {item.description}
-            </div>
-            <div className={styles.img}>
-              <img src={item.img} alt="Image" />
-            </div>
+              <div
+                className={`${styles.description} ${
+                  index === 2 ? styles.descriptionMio : ""
+                }`}>
+                {item.description}
+              </div>
+              <div className={styles.img}>
+                <img src={item.img} alt="Image" />
+              </div>
             </a>
           </div>
         ))}

@@ -62,7 +62,6 @@
   cursor: pointer;
 }
 
-
 .deleteBody {
   display: block;
   text-align: center;
@@ -87,7 +86,6 @@
 
 @media (min-width: 300px) and (max-width: 768px) {
   .modalContent {
-   
     max-width: 350px;
     margin: 0 auto;
   }

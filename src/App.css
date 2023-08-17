@@ -3,7 +3,6 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-
 @font-face {
   font-family: "Segoe UI";
   font-weight: 200;
@@ -57,13 +56,13 @@
 }
 @media (min-width: 300px) and (max-width: 768px) {
   .container {
-    width: 90%; 
-    max-width: none; 
+    width: 90%;
+    max-width: none;
     overflow: hidden;
   }
 
   .title {
-    font-size: 28px; 
-    margin-bottom: 20px; 
+    font-size: 28px;
+    margin-bottom: 20px;
   }
 }

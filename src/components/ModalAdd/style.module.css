@@ -121,8 +121,6 @@
     width: 100%;
   }
 
- 
-
   .modalHeader {
     font-size: 18px;
     margin-bottom: 30px;
@@ -144,17 +142,14 @@
     margin-bottom: 15px;
     margin-left: 10px;
   }
-    .cardInput{
-        margin-left: 10px;
-    }
+  .cardInput {
+    margin-left: 10px;
+  }
   .cardInput input,
   .cardInput textarea {
     min-width: 100%;
     margin-bottom: 6px;
-  
   }
-
-  
 
   .btnClose,
   .btnSave,
@@ -162,7 +157,7 @@
     font-size: 12px;
     margin-bottom: 10px;
   }
-  .btnSave{
+  .btnSave {
     width: 13%;
     text-align: center;
   }
