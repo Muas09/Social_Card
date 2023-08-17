@@ -11,7 +11,7 @@
   margin-right: 20px;
   padding: 15px 30px;
   color: #fff;
-  font-family: Segoe UI;
+  font-family: "Segoe UI", sans-serif;
   font-size: 15px;
   font-weight: 400;
   border-radius: 10px;
@@ -48,7 +48,7 @@ input[type="text"] {
 
 .earchName input::placeholder {
   color: #dfdfdf;
-  font-family: Segoe UI;
+  font-family: "Segoe UI", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -61,13 +61,13 @@ input[type="text"] {
   }
 
   .btnAdd {
-    width: 20%;
-    padding: 14px 8px;
-    font-size: 10px;
+    width: 25%;
+    padding: 13px 8px;
+    font-size: 12px;
   }
 
   input[type="text"] {
-    font-size: 14px;
+    font-size: 13px;
     padding: 12px 80px 11px 16px;
   }
 
@@ -76,6 +76,6 @@ input[type="text"] {
   }
 
   .searchName input::placeholder {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
