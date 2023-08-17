@@ -17,8 +17,9 @@ const AddCard = () => {
               </div>
               <div className={styles.cardInput}>
                 <div className={styles.contentAvatar}>
-                  <img src="Assets/upload_Files.svg" alt="" />
-                  <div className={styles.decription}>Upload image</div>
+                  <input className={styles.updateImage} type="file" id="fileupload" placeholder="Upload image"></input>
+                  {/* <img src="Assets/upload_Files.svg" alt="" />
+                  <div className={styles.decription}>Upload image</div> */}
                 </div>
                 <div className={styles.cardInput}>
                   <input type="text" />
@@ -28,8 +29,9 @@ const AddCard = () => {
                   <textarea></textarea>
                 </div>
                 <div className={styles.contentAvatar}>
-                  <img src="Assets/upload_Files.svg" alt="" />
-                  <div className={styles.decription}>Upload image</div>
+                <input className={styles.updateImage} type="file" id="fileupload"></input> 
+                  {/* <img src="Assets/upload_Files.svg" alt="" />
+                  <div className={styles.decription}>Upload image</div> */}
                 </div>
               </div>
             </div>

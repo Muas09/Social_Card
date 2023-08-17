@@ -47,10 +47,19 @@
   display: flex;
   border-bottom: 1px solid #d9d9d9;
 }
-
+.contentAvatar .updateImage{
+    border: none  ;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 322px;
+    padding: 6px 6px;
+    outline: none;
+    box-shadow: none;
+}
 .contentAvatar {
   display: flex;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .cardInput input {
@@ -62,9 +71,14 @@
   min-width: 322px;
   padding: 8px 6px;
   outline: none;
-  margin-bottom: 20px;
+  box-shadow: none;
+ 
 }
-
+.cardInput{
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
 .cardInput textarea {
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #d9d9d9;
@@ -73,9 +87,9 @@
   box-sizing: border-box;
   min-width: 322px;
   outline: none;
-  max-height: 35px;
+  max-height: 39px;
   padding: 8px 6px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 .contentAvatar img {
@@ -115,6 +129,15 @@
 .btnCancel {
   cursor: pointer;
 }
+.hiddenInput {
+    display: none;
+  }
+  
+  .uploadLabel {
+    cursor: pointer; 
+    display: flex;
+  }
+  
 
 @media (min-width: 300px) and (max-width: 768px) {
   .modalContent {
@@ -148,9 +171,12 @@
   .cardInput input,
   .cardInput textarea {
     min-width: 100%;
-    margin-bottom: 6px;
+    
   }
-
+  .cardInput{
+    width: 86%;
+    gap: 5%;
+}
   .btnClose,
   .btnSave,
   .btnCancel {
@@ -164,5 +190,8 @@
   .btnSave,
   .btnCancel {
     padding: 10px 15px;
+  }
+  .decription{
+    font-size: 14px;
   }
 }
