@@ -1,118 +1,173 @@
 .modal {
-    margin: 0 auto;
-    height: 100vh;
-    display: flex;
-    align-items: center;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .modalContent {
-    width: 514px;
-    margin: 0 auto;
-    background: #ffffff 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border: 1px solid #d2cbcb;
-    border-radius: 10px;
+  width: 514px;
+  margin: 0 auto;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #d2cbcb;
+  border-radius: 10px;
 }
 
 .mainContent {
-    margin: 25px 43px 25px 45px;
+  margin: 25px 43px 25px 45px;
 }
 
 .modalHeader {
-    text-align: center;
-    font: normal normal bold 20px/27px Segoe UI;
-    letter-spacing: 0px;
-    color: #000000;
-    margin-bottom: 40px;
+  text-align: center;
+  font: normal normal bold 20px/27px Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  margin-bottom: 40px;
 }
 
 .cardText li {
-    list-style: none;
-    margin-bottom: 27px;
-    font: normal normal normal 16px/21px Segoe UI;
+  list-style: none;
+  margin-bottom: 27px;
+  font: normal normal normal 16px/21px Segoe UI;
 }
 
 .cardText li:nth-child(-n + 3)::after {
-    content: "*";
-    color: #f3115e;
+  content: "*";
+  color: #f3115e;
 }
 
 .cardText li:nth-child(2) {
-    margin-bottom: 34px;
+  margin-bottom: 34px;
 }
 
 .modalBody {
-    max-height: 197px;
-    justify-content: space-between;
-    display: flex;
-    border-bottom: 1px solid #d9d9d9;
+  max-height: 197px;
+  justify-content: space-between;
+  display: flex;
+  border-bottom: 1px solid #d9d9d9;
 }
 
 .contentAvatar {
-    display: flex;
-    margin-bottom: 20px;
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .cardInput input {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    border: 1px solid #d9d9d9;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    min-width: 322px;
-    padding: 8px 6px;
-    outline: none;
-    margin-bottom: 20px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 322px;
+  padding: 8px 6px;
+  outline: none;
+  margin-bottom: 20px;
 }
 
 .cardInput textarea {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    border: 1px solid #d9d9d9;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    min-width: 322px;
-    outline: none;
-    max-height: 35px;
-    padding: 8px 6px;
-    margin-bottom: 16px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 322px;
+  outline: none;
+  max-height: 35px;
+  padding: 8px 6px;
+  margin-bottom: 16px;
 }
 
 .contentAvatar img {
-    margin-right: 11px;
+  margin-right: 11px;
 }
 
 .contentAvatar img:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .btnClose {
-    display: flex;
-    color: #ffffff;
-    justify-content: end;
-    margin-right: 43px;
-    margin-bottom: 19px;
+  display: flex;
+  color: #ffffff;
+  justify-content: end;
+  margin-right: 43px;
+  margin-bottom: 19px;
 }
 
 .btnSave {
-    background: #064ebc 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border-radius: 10px;
-    padding: 13px 24px;
-    font: normal normal bold 13px/17px Segoe UI;
-    margin-right: 20px;
+  background: #064ebc 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  padding: 13px 24px;
+  font: normal normal bold 13px/17px Segoe UI;
+  margin-right: 20px;
 }
 
 .btnCancel {
-    background: #d9d9d9 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border-radius: 10px;
-    padding: 13px 18px;
-    font: normal normal bold 13px/17px Segoe UI;
+  background: #d9d9d9 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  padding: 13px 18px;
+  font: normal normal bold 13px/17px Segoe UI;
 }
 
 .btnSave,
 .btnCancel {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+@media (min-width: 300px) and (max-width: 768px) {
+  .modalContent {
+    width: 100%;
+  }
+
+ 
+
+  .modalHeader {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .cardText li {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .modalBody {
+    max-height: 150px;
+
+    align-items: center;
+    border-bottom: none;
+  }
+
+  .contentAvatar {
+    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+    .cardInput{
+        margin-left: 10px;
+    }
+  .cardInput input,
+  .cardInput textarea {
+    min-width: 100%;
+    margin-bottom: 6px;
+  
+  }
+
+  
+
+  .btnClose,
+  .btnSave,
+  .btnCancel {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .btnSave{
+    width: 13%;
+    text-align: center;
+  }
+  .btnSave,
+  .btnCancel {
+    padding: 10px 15px;
+  }
+}

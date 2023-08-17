@@ -38,7 +38,7 @@
   color: #5b7083;
   font-size: 14px;
 }
-.deleteIcon{
+.deleteIcon {
   width: 18px;
   height: 21px;
   flex-shrink: 0;
@@ -74,10 +74,8 @@
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; /* 133.333% */
+  line-height: 20px; 
 }
-
-
 
 .descriptionMio .TextResult {
   color: #064ebc;
@@ -88,4 +86,66 @@
 .descriptionMio .Messenger {
   color: #000;
   font-size: 18px;
+}
+a{
+  text-decoration: none ;
+}
+
+
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .body {
+    max-width: 400px;
+    display: block;
+    gap: 16px;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .header {
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .profile {
+    gap: 8%;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .profile img {
+    margin-right: 0;
+    width: 30%;
+    height: 30%;
+  }
+
+  .editIcon,
+  .deleteIcon {
+    margin: 0 5px;
+  }
+
+  .description {
+    max-width: 100%;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .descriptionMio .TextResult {
+    font-size: 20px;
+    margin: 15px 0 8px;
+  }
+
+  .descriptionMio .Messenger {
+    font-size: 16px;
+  }
+  .img {
+    text-align: center;
+    width: 100%;
+  }
 }

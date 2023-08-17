@@ -3,10 +3,6 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* @font-face {
-  font-family: "Segoe UI", Arial, sans-serif;
-  src: url('../public/fonts-family/Segoe\ UI\ Bold\ Italic.ttf') format('truetype'); 
-} */
 
 @font-face {
   font-family: "Segoe UI";
@@ -45,16 +41,29 @@
   font-weight: 700;
   src: local("Segoe UI Bold Italic");
 }
-.Container {
+.container {
   width: 1164px;
   margin: 0 auto;
   margin-top: 20px;
   max-width: 1247px;
+  overflow: hidden;
 }
 
-.Title {
+.title {
   color: #000;
   text-align: center;
   font-size: 35px;
   margin-bottom: 30px;
+}
+@media (min-width: 300px) and (max-width: 768px) {
+  .container {
+    width: 90%; 
+    max-width: none; 
+    overflow: hidden;
+  }
+
+  .title {
+    font-size: 28px; 
+    margin-bottom: 20px; 
+  }
 }

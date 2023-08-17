@@ -22,12 +22,17 @@ const customStyles = {
     opacity: 1,
   },
 };
-
+if (window.innerWidth < 768) {
+  customStyles.content.width = "80%";
+  customStyles.content.height = "auto";
+  customStyles.content.maxHeight = "80vh";
+  customStyles.content.padding = "10px";
+  customStyles.content.boxShadow = "0px 2px 4px #00000029";
+}
 
 const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(""); // Initialize searchTerm
-
+  const [searchTerm, setSearchTerm] = useState("");
   const handleUpdateClick = () => {
     setIsModalOpen(true);
   };
@@ -56,11 +61,7 @@ const Index = () => {
             />
           </div>
           <div className={styles.iconSearch}>
-            <img
-              src="Assets/Icon_Search.svg"
-              alt=""
-              onClick={handleSearch}
-            />
+            <img src="Assets/Icon_Search.svg" alt="" onClick={handleSearch} />
           </div>
           <Modal
             isOpen={isModalOpen}
@@ -68,8 +69,7 @@ const Index = () => {
             style={customStyles}
             contentLabel="Add New Modal"
             className={styles.customModal}
-            overlayClassName={styles.customOverlay}
-          >
+            overlayClassName={styles.customOverlay}>
             <ModalAdd onClose={closeModal} />
           </Modal>
         </div>

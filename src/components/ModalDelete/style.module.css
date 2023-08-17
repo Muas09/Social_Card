@@ -1,126 +1,124 @@
 .modal {
-    margin: 0 auto;
-    height: 100vh;
-    display: flex;
-    align-items: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .modalContent {
-    width: 514px;
-    margin: 0 auto;
-    background: #ffffff 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border: 1px solid #d2cbcb;
-    border-radius: 10px;
+  width: 514px;
+  margin: 0 auto;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #d2cbcb;
+  border-radius: 10px;
 }
 
 .mainContent {
-    margin: 25px 43px 25px 45px;
+  margin: 25px 43px 25px 45px;
 }
 
 .modalHeader {
-    text-align: center;
-    font: normal normal bold 20px/27px Segoe UI;
-    letter-spacing: 0px;
-    color: #000000;
-    margin-bottom: 40px;
+  text-align: center;
+  font: normal normal bold 20px/27px Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  margin-bottom: 40px;
 }
 
 .modalBody {
-    max-height: 197px;
-    justify-content: space-between;
-    display: flex;
-    border-bottom: 1px solid #d9d9d9;
-}
-
- .contentAvatar {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.cardInput input {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    border: 1px solid #d9d9d9;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    min-width: 322px;
-    padding: 8px 6px;
-    outline: none;
-    margin-bottom: 20px;
-}
-
-.cardInput textarea {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    border: 1px solid #d9d9d9;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    min-width: 322px;
-    outline: none;
-    max-height: 35px;
-    padding: 8px 6px;
-    margin-bottom: 16px;
-}
-
-.contentAvatar img {
-    margin-right: 11px;
-}
-
-.contentAvatar img:hover {
-    cursor: pointer;
+  max-height: 197px;
+  justify-content: space-between;
+  display: flex;
+  border-bottom: 1px solid #d9d9d9;
 }
 
 .btnClose {
-    display: flex;
-    color: #ffffff;
-    justify-content: end;
-    margin-right: 43px;
-    margin-bottom: 19px;
+  display: flex;
+  color: #ffffff;
+  justify-content: end;
+  margin-right: 43px;
+  margin-bottom: 19px;
 }
 
 .btnSave {
-    background: #064ebc 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border-radius: 10px;
-    padding: 13px 24px;
-    font: normal normal bold 13px/17px Segoe UI;
-    margin-right: 20px;
+  background: #064ebc 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  padding: 13px 24px;
+  font: normal normal bold 13px/17px Segoe UI;
+  margin-right: 20px;
 }
 
 .btnCancel {
-    background: #d9d9d9 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border-radius: 10px;
-    padding: 13px 18px;
-    font: normal normal bold 13px/17px Segoe UI;
+  background: #d9d9d9 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  padding: 13px 18px;
+  font: normal normal bold 13px/17px Segoe UI;
 }
 
 .btnSave,
 .btnCancel {
-    cursor: pointer;
-}
-/* CSS card Delete */
-
-.DeleteBody {
-    display: block;
-    text-align: center;
-    font: normal normal normal 16px/21px Segoe UI;
-    color: #000000;
-    margin-bottom: 20px;
+  cursor: pointer;
 }
 
-.DeleteBody img {
-    padding-bottom: 16px;
-    display: flex;
+
+.deleteBody {
+  display: block;
+  text-align: center;
+  font: normal normal normal 16px/21px Segoe UI;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.deleteBody img {
+  padding-bottom: 16px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.deleteBody img:hover {
+  cursor: pointer;
+}
+
+.decriptionDelete {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .modalContent {
+   
+    max-width: 350px;
     margin: 0 auto;
-}
+  }
 
-.DeleteBody img:hover {
-    cursor: pointer;
-}
+  .modalHeader {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
 
-.DecriptionDelete {
-    margin-bottom: 20px;
-}
+  .modalBody {
+    flex-direction: column;
+    max-height: none;
+    border-bottom: none;
+  }
 
+  .btnClose {
+    margin-right: 20px;
+  }
+
+  .btnSave,
+  .btnCancel {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+
+  .deleteBody {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .deleteBody img {
+    padding-bottom: 10px;
+  }
+}

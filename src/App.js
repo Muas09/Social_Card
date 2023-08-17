@@ -9,8 +9,8 @@ import Card from "./components/Card";
 function App() {
   return (
     <Router>
-      <div className="Container">
-        <div className="Title">LIST SOCIAL CARD</div>
+      <div className="container">
+        <div className="title">LIST SOCIAL CARD</div>
         <Routes>
         
           <Route path="" element={<Card />} />
