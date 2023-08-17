@@ -6,12 +6,12 @@ const DeleteCard = () => {
     <div className={styles.DeleteCard}>
         <div className={styles.Modal}>
           <div className={styles.modalContent}>
-            <div className={styles.MainContent}>
-              <div className={styles.ModalHeader}>
+            <div className={styles.mainContent}>
+              <div className={styles.modalHeader}>
                 Your about to delete a item
               </div>
               <div className={`${styles.ModalBody} ${styles.DeleteBody}`}>
-                <img src="Images/Trash-can-regular.svg" alt="" />
+                <img src="Assets/Icon_Delete.svg" alt="" />
                 <div className={styles.DecriptionDelete}>
                   This will delete your item form list<br></br> Are you sure?
                 </div>
