@@ -47,16 +47,17 @@
   display: flex;
   border-bottom: 1px solid #d9d9d9;
 }
-.contentAvatar .updateImage{
-    border: none  ;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    min-width: 322px;
-    padding: 6px 6px;
-    outline: none;
-    box-shadow: none;
+
+.contentAvatar .updateImage {
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 6px;
+  outline: none;
+  box-shadow: none;
 }
+
 .contentAvatar {
   display: flex;
   /* margin-bottom: 20px; */
@@ -72,13 +73,15 @@
   padding: 8px 6px;
   outline: none;
   box-shadow: none;
- 
+
 }
-.cardInput{
-    display: flex;
-    flex-direction: column;
-    gap: 5%;
+
+.cardInput {
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
 }
+
 .cardInput textarea {
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #d9d9d9;
@@ -129,15 +132,16 @@
 .btnCancel {
   cursor: pointer;
 }
+
 .hiddenInput {
-    display: none;
-  }
-  
-  .uploadLabel {
-    cursor: pointer; 
-    display: flex;
-  }
-  
+  display: none;
+}
+
+.uploadLabel {
+  cursor: pointer;
+  display: flex;
+}
+
 
 @media (min-width: 300px) and (max-width: 768px) {
   .modalContent {
@@ -147,6 +151,11 @@
   .modalHeader {
     font-size: 18px;
     margin-bottom: 30px;
+  }
+
+  .cardText ul {
+    padding: 0  ; 
+    margin-left: -30px                                          ;
   }
 
   .cardText li {
@@ -165,33 +174,40 @@
     margin-bottom: 15px;
     margin-left: 10px;
   }
+
   .cardInput {
     margin-left: 10px;
   }
+
   .cardInput input,
   .cardInput textarea {
     min-width: 100%;
-    
+
   }
-  .cardInput{
+
+  .cardInput {
     width: 86%;
     gap: 5%;
-}
+  }
+
   .btnClose,
   .btnSave,
   .btnCancel {
     font-size: 12px;
     margin-bottom: 10px;
   }
+
   .btnSave {
     width: 13%;
     text-align: center;
   }
+
   .btnSave,
   .btnCancel {
     padding: 10px 15px;
   }
-  .decription{
+
+  .decription {
     font-size: 14px;
   }
 }
