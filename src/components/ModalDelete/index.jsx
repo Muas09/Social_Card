@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./style.module.css";
 
 const DeleteCard = () => {
+  const [modalVisible, setModalVisible] = useState(true);
+
+  const handleCancelClick = () => {
+    setModalVisible(false); 
+  };
+
   return (
     <div className={styles.deleteCard}>
       <div className={styles.modal}>
@@ -19,8 +25,8 @@ const DeleteCard = () => {
           </div>
 
           <div className={styles.btnClose}>
-            <div className={styles.btnSave}>Delete</div>
-            <div className={styles.btnCancel}>Cancel</div>
+            <button className={styles.btnSave}>Delete</button>
+            <button className={styles.btnCancel} onClick={handleCancelClick}>Cancel</button>
           </div>
         </div>
       </div>

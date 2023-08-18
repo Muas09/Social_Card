@@ -35,6 +35,7 @@ const Index = () => {
   const data = getData();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [items, setItems] = useState(data);
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -51,6 +52,11 @@ const Index = () => {
 
   const handleCloseDeleteModal = () => {
     setShowDeleteModal(false);
+  };
+
+  const handleNewItem = (newItem) => {
+    setItems([...items, newItem]);
+    closeModal();
   };
 
   return (
@@ -106,7 +112,7 @@ const Index = () => {
           contentLabel="Add New Modal"
           className={styles.customModal}
           overlayClassName={styles.customOverlay}>
-          <ModalAdd onClose={closeModal} />
+          <ModalAdd onSave={handleNewItem} />
         </Modal>
         <Modal
           isOpen={showDeleteModal}

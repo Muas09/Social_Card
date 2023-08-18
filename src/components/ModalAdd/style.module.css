@@ -105,27 +105,30 @@
 
 .btnClose {
   display: flex;
-  color: #ffffff;
   justify-content: end;
   margin-right: 43px;
   margin-bottom: 19px;
 }
 
-.btnSave {
+.btnSave  button{
   background: #064ebc 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
   padding: 13px 24px;
+  color: #FFFFFF; 
   font: normal normal bold 13px/17px Segoe UI;
   margin-right: 20px;
+  border: none;
 }
 
 .btnCancel {
+  color: #FFFFFF;
   background: #d9d9d9 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
   padding: 13px 18px;
   font: normal normal bold 13px/17px Segoe UI;
+  border: none;
 }
 
 .btnSave,
@@ -172,31 +175,34 @@
 
   .contentAvatar {
     margin-bottom: 15px;
-    margin-left: 10px;
+    margin-left: 0px;
   }
 
   .cardInput {
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
   }
 
   .cardInput input,
   .cardInput textarea {
-    min-width: 100%;
+    min-width: 95%;
+    padding: 5px;
 
   }
 
   .cardInput {
-    width: 86%;
+    width: 96%;
     gap: 5%;
+    
   }
 
   .btnClose,
   .btnSave,
   .btnCancel {
     font-size: 12px;
-    margin-bottom: 10px;
+    margin-bottom: 10px;  
   }
-
+ 
   .btnSave {
     width: 13%;
     text-align: center;
