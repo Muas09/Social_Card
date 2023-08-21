@@ -78,4 +78,5 @@ input[type="text"] {
   .searchName input::placeholder {
     font-size: 13px;
   }
+ 
 }

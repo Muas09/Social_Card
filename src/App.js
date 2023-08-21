@@ -4,7 +4,7 @@ import "./App.css";
 
 import CardDetail from "./components/CardDetail";
 import Card from "./components/Card";
-// import NotFound from "./components/NotFound";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="" element={<Card />} />
           <Route path="/Detail" element={<CardDetail />} />
-          {/* <Route path="/notFound" element={<NotFound />}/> */}
+          <Route path="/notFound" element={<NotFound />}/>
         </Routes>
       </div>
     </Router>

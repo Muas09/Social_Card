@@ -15,7 +15,7 @@
 }
 
 .mainContent {
-  margin: 25px 43px 25px 45px;
+  margin: 25px 21px 25px 45px;
 }
 
 .modalHeader {
@@ -25,7 +25,9 @@
   color: #000000;
   margin-bottom: 40px;
 }
-
+.cardText ul {
+  padding: 0px;
+}
 .cardText li {
   list-style: none;
   margin-bottom: 27px;
@@ -73,13 +75,12 @@
   padding: 8px 6px;
   outline: none;
   box-shadow: none;
-
 }
 
 .cardInput {
   display: flex;
   flex-direction: column;
-  gap: 5%;
+  gap: 3%;
 }
 
 .cardInput textarea {
@@ -110,19 +111,19 @@
   margin-bottom: 19px;
 }
 
-.btnSave  button{
+.btnSave  {
   background: #064ebc 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
   padding: 13px 24px;
-  color: #FFFFFF; 
+  color: #ffffff;
   font: normal normal bold 13px/17px Segoe UI;
   margin-right: 20px;
   border: none;
 }
 
 .btnCancel {
-  color: #FFFFFF;
+  color: #ffffff;
   background: #d9d9d9 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
@@ -145,7 +146,6 @@
   display: flex;
 }
 
-
 @media (min-width: 300px) and (max-width: 768px) {
   .modalContent {
     width: 100%;
@@ -157,8 +157,8 @@
   }
 
   .cardText ul {
-    padding: 0  ; 
-    margin-left: -30px                                          ;
+    padding: 0;
+    margin-left: -30px;
   }
 
   .cardText li {
@@ -187,27 +187,26 @@
   .cardInput textarea {
     min-width: 95%;
     padding: 5px;
-
   }
 
   .cardInput {
     width: 96%;
     gap: 5%;
-    
   }
 
   .btnClose,
   .btnSave,
   .btnCancel {
     font-size: 12px;
-    margin-bottom: 10px;  
-  }
- 
-  .btnSave {
-    width: 13%;
-    text-align: center;
+    margin-bottom: 10px;
+    width: 94%;
   }
 
+  .btnSave {
+    width: 89%;
+    text-align: center;
+  }
+ 
   .btnSave,
   .btnCancel {
     padding: 10px 15px;

@@ -10,30 +10,32 @@ const Index = ({ closeModal }) => {
 
   useEffect(() => {
     const form = document.getElementById("form-add");
-    const profileImg = document.getElementById("fileupload");
+    const profileImg = document.getElementById("profile-img");
+    console.log("Form element:", form);
+    console.log("Profile image element:", profileImg);
 
     if (form && profileImg) {
       form.addEventListener("submit", async function (e) {
         e.preventDefault();
-        const uploadedUrls = await uploadFiles(files);
-        console.log(uploadedUrls);
+        uploadFiles(profileImg.files);
+         console.log(profileImg.files);
       });
     }
-  }, [files]);
+  }, []);
 
-  // const handleImageUpload = (event) => {
-  //   const fileList = event.target.files;
-  //   setFiles([...fileList]);
-  // };
+  const handleImageUpload = (event) => {
+    const fileList = event.target.files;
+    setFiles([...fileList]);
+  };
 
   const uploadFiles = async (files) => {
-    if (files.length > 0) {
+    if (files) {
       const CLOUD_NAME = "dgyrw4fbm";
-      const PRESET_NAME = "socialCard";
+      const PRESET_NAME = "Social_img";
+      const url = [];
       const FOLDER_NAME = "Social_Card";
       const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
 
-      const uploadedUrls = [];
 
       const formData = new FormData();
       formData.append("upload_preset", PRESET_NAME);
@@ -48,26 +50,14 @@ const Index = ({ closeModal }) => {
           },
         });
 
-        uploadedUrls.push(response.data.secure_url);
+        url.push(response.data.secure_url);
       }
 
-      return uploadedUrls;
+      return url;
     }
 
-    return [];
   };
 
-  // const handleSave = () => {
-  //   if (name && description && imageURL) {
-  //     const newItem = {
-  //       profile: imageURL,
-  //       name,
-  //       description,
-  //       img: imageURL,
-  //     };
-  //     onSave(newItem);
-  //   }
-  // };
 
   return (
     <form action="" id="form-add">
@@ -86,17 +76,21 @@ const Index = ({ closeModal }) => {
                   </ul>
                 </div>
                 <div className={styles.cardInput}>
-                  <div className={styles.contentAvatar}>
-                    <img src="Images/Upload-solid.svg" alt="" />
+                  {/* <div className={styles.contentAvatar}>
+                    <img src="Assets/Upload_Files.svg" alt="" />
                     <div className={styles.Decription}>Upload image</div>
-                    {/* <label htmlFor="fileupload"></label>
+                    <label htmlFor="fileupload"></label>
                     <input
                       className={styles.updateImage}
                       type="file"
                       id="fileupload"
                       placeholder="Description"
                       onChange={handleImageUpload}
-                    /> */}
+                    />
+                  </div> */}
+                  <div
+                    className={`${styles.contentAvatar} ${styles.ContentImg}`}>
+                    <input type="file" id="profile-img" multiple onChange={handleImageUpload}/>
                   </div>
                   <div className={styles.cardInput}>
                     <input type="text" />
@@ -116,9 +110,9 @@ const Index = ({ closeModal }) => {
                     /> */}
                   </div>
                   <div className={styles.contentAvatar}>
-                  <img src="Images/Upload-solid.svg" alt="" />
-                    <div className={styles.Decription}>Upload image</div>
-                    {/* <label htmlFor="fileupload"></label>
+                    {/* <img src="Assets/Upload_Files.svg" alt="" />
+                    <div className={styles.decription}>Upload image</div>
+                    <label htmlFor="fileupload"></label>
                     <input
                       className={styles.updateImage}
                       type="file"
@@ -126,17 +120,21 @@ const Index = ({ closeModal }) => {
                       onChange={handleImageUpload}
                     /> */}
                   </div>
-                  <div className={`${styles.ContentAvatar} ${styles.ContentImg}`}>
-                    <input type="file" id="profile-img" multiple />
+                  <div
+                    className={`${styles.contentAvatar} ${styles.ContentImg}`}>
+                    <input type="file" id="profile-img" multiple onChange={handleImageUpload}/>
                   </div>
                 </div>
               </div>
             </div>
-            <div className={styles.btnClose}>
-              <div className={styles.btnSave}>
-                <button type="submit">Save</button>
+            <div  className={styles.btnClose}>
+              <div >
+                <button className={styles.btnSave} type="submit" >Save</button>
               </div>
-              <div className={styles.btnCancel}  onClick={closeModal}>Cancel</div>
+              <div >
+              <button className={styles.btnCancel} onClick={closeModal} >Cancel</button>
+                
+              </div>
             </div>
           </div>
         </div>
@@ -146,3 +144,4 @@ const Index = ({ closeModal }) => {
 };
 
 export default Index;
+

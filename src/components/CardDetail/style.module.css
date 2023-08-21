@@ -102,7 +102,7 @@
   border-radius: 10px;
   width: 100%;
   outline: none;
-  padding: 20px 0px 94px;
+  padding: 20px 10px 94px 10px;
 }
 
 .btnPost {

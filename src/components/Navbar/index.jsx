@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./style.module.css";
 import ModalAdd from "../ModalAdd";
 import Modal from "react-modal"; // Don't forget to import Modal
+// import NotFound from "../NotFound";
 
 const customStyles = {
   content: {
@@ -74,6 +75,7 @@ const Index = () => {
           </Modal>
         </div>
       </div>
+      {/* <NotFound /> */}
     </div>
   );
 };
