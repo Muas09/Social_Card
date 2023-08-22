@@ -106,6 +106,7 @@
 }
 
 .btnPost {
+  border: none;
   position: absolute;
   right: 18px;
   top: 62.5%;
@@ -125,7 +126,12 @@
 
 .btnPost:hover {
   cursor: pointer;
+  
 }
+.emptyComment {
+  border: 1px solid #F3115E;
+}
+
 
 @media (min-width: 300px) and (max-width: 768px) {
   .container {

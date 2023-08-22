@@ -76,7 +76,10 @@
   outline: none;
   box-shadow: none;
 }
-
+.bodycardInput{
+  display: flex;
+ 
+}
 .cardInput {
   display: flex;
   flex-direction: column;
@@ -145,6 +148,7 @@
   cursor: pointer;
   display: flex;
 }
+
 
 @media (min-width: 300px) and (max-width: 768px) {
   .modalContent {
