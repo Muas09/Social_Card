@@ -128,6 +128,9 @@
   cursor: pointer;
   
 }
+textarea.errorPost{
+  border-color: #f3115e;
+}
 .emptyComment {
   border: 1px solid #F3115E;
 }

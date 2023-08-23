@@ -15,6 +15,7 @@
 }
 
 .mainContent {
+  width: 433px;
   margin: 25px 21px 25px 45px;
 }
 
@@ -45,7 +46,7 @@
 
 .modalBody {
   max-height: 197px;
-  justify-content: space-between;
+  gap: 15px;
   display: flex;
   border-bottom: 1px solid #d9d9d9;
 }
@@ -83,7 +84,8 @@
 .cardInput {
   display: flex;
   flex-direction: column;
-  gap: 3%;
+  gap: 8%;
+  margin-right: 8px;
 }
 
 .cardInput textarea {
@@ -114,7 +116,7 @@
   margin-bottom: 19px;
 }
 
-.btnSave  {
+.btnSave  button {
   background: #064ebc 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
@@ -146,6 +148,19 @@
 
 .uploadLabel {
   cursor: pointer;
+  display: flex;
+}
+.errorText {
+  color: #f3115e;
+  filter: brightness(0) saturate(100%) invert(59%) sepia(96%) saturate(6764%)
+    hue-rotate(338deg) brightness(99%) contrast(98%);
+}
+
+.errorInput input,
+.errorInput textarea {
+  border-color: #f3115e;
+}
+.contentImg label{
   display: flex;
 }
 

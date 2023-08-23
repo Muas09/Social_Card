@@ -44,15 +44,17 @@ input[type="text"] {
   position: absolute;
   right: 14px;
   cursor: pointer;
+  margin-top: 8px;
 }
 
-.earchName input::placeholder {
+.searchName input::placeholder {
   color: #dfdfdf;
   font-family: "Segoe UI", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
 }
+
 
 @media (min-width: 300px) and (max-width: 768px) {
   .navbar {

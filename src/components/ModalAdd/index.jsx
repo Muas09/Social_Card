@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 
 const Index = ({ closeModal }) => {
@@ -12,16 +12,20 @@ const Index = ({ closeModal }) => {
   const [hasUploadedContent, setHasUploadedContent] = useState(false);
 
   const handleImageUploadProfile = (e) => {
+    console.log("Uploading profile image...");
     const file = e.target.files[0];
     if (file) {
+      console.log("Profile image selected:", file);
       setUploadedImageNameProfile(file.name);
       setHasUploadedProfile(true);
     }
   };
 
   const handleImageUploadContent = (e) => {
+    console.log("Uploading profile image...");
     const file = e.target.files[0];
     if (file) {
+      console.log("Content image selected:", file);
       setUploadedImageNameContent(file.name);
       setHasUploadedContent(true);
     }
@@ -29,17 +33,27 @@ const Index = ({ closeModal }) => {
 
   useEffect(() => {
     const form = document.getElementById("form-add");
-    const profileImg = document.getElementById("upload-img-profile");
-    console.log("Form element:", form);
-    console.log("Profile image element:", profileImg);
 
-    if (form && profileImg) {
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        uploadFiles(profileImg.files);
-      });
+    const handleFormSubmit = async (e) => {
+      e.preventDefault();
+      const profileImg = document.getElementById("upload-img-profile");
+      const contentImg = document.getElementById("upload-img-content");
+      const allFiles = [...profileImg.files, ...contentImg.files];
+      uploadFiles(allFiles);
+    };
+
+    if (form) {
+      form.addEventListener("submit", handleFormSubmit); //remove submit event
     }
-  }, []); // Empty dependency array means this effect runs once after initial render
+
+    return () => {
+      if (form) {
+        form.removeEventListener("submit", handleFormSubmit);
+      }
+    };
+  }, []);
+  // Empty dependency array means this effect runs once after initial render
+  // Empty dependency array means this effect runs once after initial render
 
   const uploadFiles = async (files) => {
     if (files) {
@@ -62,7 +76,9 @@ const Index = ({ closeModal }) => {
           },
         });
 
+        console.log("Response from Cloudinary:", response);
         url.push(response.data.secure_url);
+        console.log(url);
       }
 
       return url;
@@ -86,9 +102,50 @@ const Index = ({ closeModal }) => {
     setDescription(value);
     setDescriptionError(value === "");
   };
-  const handleSaveClick = () => {
+  const handleSaveClick = async () => {
     setNameError(name === "");
     setDescriptionError(description === "");
+
+    if (
+      !name ||
+      !description ||
+      !uploadedImageNameProfile ||
+      !uploadedImageNameContent
+    ) {
+      return; // Không thực hiện lưu nếu có ô input nào còn trống
+    }
+
+    const profileImg = document.getElementById("upload-img-profile");
+    const contentImg = document.getElementById("upload-img-content");
+    const allFiles = [...profileImg.files, ...contentImg.files];
+
+    try {
+      const uploadedUrls = await uploadFiles(allFiles);
+
+      // Lưu Name và Description vào Local Storage
+      const dataToSave = {
+        name,
+        description,
+        profileImageUrl: uploadedUrls[0],
+        contentImageUrl: uploadedUrls[1],
+      };
+      localStorage.setItem("cardData", JSON.stringify(dataToSave));
+      resetForm();
+      console.log("Thông tin đã được lưu:", dataToSave);
+    } catch (error) {
+      console.error("Lỗi trong quá trình tải lên hình ảnh:", error);
+    }
+  };
+
+  const resetForm = () => {
+    setUploadedImageNameProfile(null);
+    setHasUploadedProfile(false);
+    setUploadedImageNameContent(null);
+    setHasUploadedContent(false);
+    setName("");
+    setDescription("");
+    setNameError(false);
+    setDescriptionError(false);
   };
 
   return (
@@ -101,14 +158,16 @@ const Index = ({ closeModal }) => {
               <div className={styles.modalBody}>
                 <div className={styles.cardText}>
                   <ul>
-                    <li className={!hasUploadedProfile ? styles.errorText : ""}>
+                    {/* <li className={!hasUploadedProfile ? styles.errorText : ""}> */}
+                    <li  className={descriptionError ? styles.errorText : ""}>
+
                       Avatar
                     </li>
                     <li className={nameError ? styles.errorText : ""}>Name</li>
                     <li className={descriptionError ? styles.errorText : ""}>
                       Decription
                     </li>
-                    <li>Image</li>
+                    <li  className={descriptionError ? styles.errorText : ""}>Image </li>
                   </ul>
                 </div>
                 <div className={styles.bodycardInput}>
@@ -135,7 +194,7 @@ const Index = ({ closeModal }) => {
                               alt="icon_arrow"
                               className={styles.errorIcon}
                             />
-                            <div className={styles.Decription}>
+                            <div className={styles.decription}>
                               Upload image
                             </div>
                           </>
@@ -168,33 +227,25 @@ const Index = ({ closeModal }) => {
                         onChange={handleDescriptionChange}></textarea>
                     </div>
 
-                    {/* <div
-                      className={`${styles.contentAvatar} ${styles.contentImg}`}>
-                      <input
-                        type="file"
-                        id="profile-img"
-                        multiple
-                        onChange={handleImageUpload}
-                      />
-                    </div> */}
                     <div
-                      className={`${styles.ContentAvatar} ${styles.ContentImg}`}>
+                      className={`${styles.contentAvatar} ${styles.contentImg}`}>
                       <label
-                        htmlFor="upload-img-content"
-                        className={styles.uploadLabel}>
-                        {hasUploadedContent ? (
+                        htmlFor="upload-img-profile"
+                        >
+                        {hasUploadedProfile ? (
                           <>
                             <img
-                              src="Images/Upload-solid.svg"
+                              src="Assets/Upload_Files.svg"
                               alt="icon_arrow"
                             />
-                            <span>{uploadedImageNameContent}</span>
+                            <span>{uploadedImageNameProfile}</span>
                           </>
                         ) : (
                           <>
                             <img
-                              src="Images/Upload-solid.svg"
+                              src="Assets/Upload_Files.svg"
                               alt="icon_arrow"
+                              className={styles.errorIcon}
                             />
                             <div className={styles.decription}>
                               Upload image
@@ -217,9 +268,8 @@ const Index = ({ closeModal }) => {
               </div>
             </div>
             <div className={styles.btnClose}>
-              <div>
-                <button className={styles.btnSave}  type='submit'
-                  onClick={handleSaveClick}>
+              <div  className={styles.btnSave} >
+                <button type="submit" onClick={handleSaveClick}>
                   Save
                 </button>
               </div>
@@ -233,7 +283,7 @@ const Index = ({ closeModal }) => {
               <div className={styles.successMessage}>Saved successfully!</div>
             )} */}
           </div>
-        </div>
+        </div>                                                      
       </div>
     </form>
   );

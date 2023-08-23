@@ -64,18 +64,19 @@ const Index = ({ setShowContainer }) => {
       setInputComment("");
     } else {
       setIsCommentPosted(false);
+      setCommentError(true);
     }
   };
 
   // Số lượt nhấn mặc định là 2
   const [heartCount, setHeartCount] = useState(1);
-  const [messageCount, setMessageCount] = useState(2);
+  const [messageCount, setMessageCount] = useState(1);
   const [isCommentPosted, setIsCommentPosted] = useState(false);
 
   return (
     <div>
       <div>
-        <div className="title">LIST SOCIAL CARD</div>
+        <div className={styles.title}>LIST SOCIAL CARD</div>
       </div>
       <div className={styles.container}>
       <div className={styles.profileDetail}>
@@ -119,17 +120,6 @@ const Index = ({ setShowContainer }) => {
         </div>
       </div>
 
-      {/* <div className={styles.contentComment}>
-        <div className={styles.dayComment}>22/04/2021 (day create)</div>
-        <div className={styles.messageComment}>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more- or-less normal distribution
-          of letters, as opposed to using 'Content here, content here', making
-          it look like readable English.
-        </div>
-      </div> */}
-
       <div className={styles.contentComment}>
         <div className={styles.dayComment}>22/04/2021 (day create)</div>
         <div className={styles.messageComment}>
@@ -143,7 +133,7 @@ const Index = ({ setShowContainer }) => {
       <div>
         {localStorage.getItem("comments") &&
           JSON.parse(localStorage.getItem("comments"))
-            .reverse() // Đảo ngược mảng các comment
+            .reverse()
             .map((comment, index) => (
               <div
                 className={`${styles.comment} ${styles.contentComment}`}
@@ -155,16 +145,7 @@ const Index = ({ setShowContainer }) => {
               </div>
             ))}
 
-        {/* <div className={styles.ContentComment}>
-          <div className={styles.DayComment}>22/04/2021 (day create)</div>
-          <div className={styles.MessageComment}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more- or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English.
-          </div>
-        </div> */}
+      
       </div>
 
       <div className={styles.postComment}>
@@ -193,4 +174,4 @@ const Index = ({ setShowContainer }) => {
 };
 
 export default Index;
-// import React from "react";
+
