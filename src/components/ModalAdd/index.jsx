@@ -53,7 +53,6 @@ const Index = ({ closeModal }) => {
     };
   }, []);
   // Empty dependency array means this effect runs once after initial render
-  // Empty dependency array means this effect runs once after initial render
 
   const uploadFiles = async (files) => {
     if (files) {
@@ -102,6 +101,7 @@ const Index = ({ closeModal }) => {
     setDescription(value);
     setDescriptionError(value === "");
   };
+
   const handleSaveClick = async () => {
     setNameError(name === "");
     setDescriptionError(description === "");
@@ -115,6 +115,13 @@ const Index = ({ closeModal }) => {
       return; // Không thực hiện lưu nếu có ô input nào còn trống
     }
 
+    // Lấy dữ liệu từ local storage (nếu có)
+    const existingData = JSON.parse(localStorage.getItem("cardData")) || [];
+
+    // Kiểm tra nếu existingData không phải mảng, thì tạo một mảng rỗng
+    const dataArray = Array.isArray(existingData) ? existingData : [];
+
+    // Kiểm tra và đợi tải lên các tệp lên Cloudinary
     const profileImg = document.getElementById("upload-img-profile");
     const contentImg = document.getElementById("upload-img-content");
     const allFiles = [...profileImg.files, ...contentImg.files];
@@ -123,15 +130,21 @@ const Index = ({ closeModal }) => {
       const uploadedUrls = await uploadFiles(allFiles);
 
       // Lưu Name và Description vào Local Storage
-      const dataToSave = {
+      const newDataItem = {
         name,
         description,
-        profileImageUrl: uploadedUrls[0],
-        contentImageUrl: uploadedUrls[1],
+        Profile: uploadedUrls[0],
+        img: uploadedUrls[1],
       };
-      localStorage.setItem("cardData", JSON.stringify(dataToSave));
+
+      // Thêm mục mới vào danh sách dữ liệu cũ
+      const updatedData = [...dataArray, newDataItem];
+
+      // Lưu danh sách dữ liệu cập nhật vào local storage
+      localStorage.setItem("cardData", JSON.stringify(updatedData));
       resetForm();
-      console.log("Thông tin đã được lưu:", dataToSave);
+      console.log("Thông tin đã được lưu:", newDataItem);
+      closeModal();
     } catch (error) {
       console.error("Lỗi trong quá trình tải lên hình ảnh:", error);
     }
@@ -158,135 +171,116 @@ const Index = ({ closeModal }) => {
               <div className={styles.modalBody}>
                 <div className={styles.cardText}>
                   <ul>
-                    {/* <li className={!hasUploadedProfile ? styles.errorText : ""}> */}
-                    <li  className={descriptionError ? styles.errorText : ""}>
-
+                    <li className={!hasUploadedProfile ? styles.errorText : ""}>
                       Avatar
                     </li>
                     <li className={nameError ? styles.errorText : ""}>Name</li>
                     <li className={descriptionError ? styles.errorText : ""}>
                       Decription
                     </li>
-                    <li  className={descriptionError ? styles.errorText : ""}>Image </li>
+                    <li className={!hasUploadedContent ? styles.errorText : ""}>
+                      Image
+                    </li>
                   </ul>
                 </div>
-                <div className={styles.bodycardInput}>
-                  <div className={styles.cardInput}>
-                    <div
-                      className={`${styles.contentAvatar} ${styles.ContentImg}`}>
-                      <label
-                        htmlFor="upload-img-profile"
-                        className={`${styles.uploadLabel} ${
-                          !hasUploadedProfile ? styles.errorText : ""
-                        }`}>
-                        {hasUploadedProfile ? (
-                          <>
-                            <img
-                              src="Assets/Upload_Files.svg"
-                              alt="icon_arrow"
-                            />
-                            <span>{uploadedImageNameProfile}</span>
-                          </>
-                        ) : (
-                          <>
-                            <img
-                              src="Assets/Upload_Files.svg"
-                              alt="icon_arrow"
-                              className={styles.errorIcon}
-                            />
-                            <div className={styles.decription}>
-                              Upload image
-                            </div>
-                          </>
-                        )}
-                      </label>
-                      <input
-                        type="file"
-                        id="upload-img-profile"
-                        multiple
-                        className={styles.hiddenInput}
-                        onChange={handleImageUploadProfile}
-                      />
-                    </div>
-                    <div
-                      className={`${styles.cardInput} ${
-                        nameError ? styles.errorInput : ""
+                <div className={styles.cardInput}>
+                  <div className={styles.contentAvatar}>
+                    <label
+                      htmlFor="upload-img-profile"
+                      className={`${styles.uploadLabel} ${
+                        !hasUploadedProfile ? styles.errorText : ""
                       }`}>
-                      <input
-                        type="text"
-                        value={name}
-                        onChange={handleNameChange}
-                      />
-                    </div>
-                    <div
-                      className={`${styles.cardInput} ${
-                        descriptionError ? styles.errorInput : ""
-                      }`}>
-                      <textarea
-                        value={description}
-                        onChange={handleDescriptionChange}></textarea>
-                    </div>
+                      {hasUploadedProfile ? (
+                        <>
+                          <img src="Assets/Upload_Files.svg" alt="icon_arrow" />
+                          <span>{uploadedImageNameProfile}</span>
+                        </>
+                      ) : (
+                        <>
+                          <img src="Assets/Upload_Files.svg" alt="icon_arrow" />
+                          <div className={styles.decription}>Upload image</div>
+                        </>
+                      )}
+                    </label>
 
-                    <div
-                      className={`${styles.contentAvatar} ${styles.contentImg}`}>
-                      <label
-                        htmlFor="upload-img-profile"
-                        >
-                        {hasUploadedProfile ? (
-                          <>
-                            <img
-                              src="Assets/Upload_Files.svg"
-                              alt="icon_arrow"
-                            />
-                            <span>{uploadedImageNameProfile}</span>
-                          </>
-                        ) : (
-                          <>
-                            <img
-                              src="Assets/Upload_Files.svg"
-                              alt="icon_arrow"
-                              className={styles.errorIcon}
-                            />
-                            <div className={styles.decription}>
-                              Upload image
-                            </div>
-                          </>
-                        )}
-                      </label>
-                      <input
-                        type="file"
-                        id="upload-img-content"
-                        multiple
-                        className={styles.hiddenInput}
-                        onChange={handleImageUploadContent}
-                      />
-                    </div>
-                    <div
-                      className={`${styles.contentAvatar} ${styles.contentImg}`}></div>
+                    <input
+                      type="file"
+                      id="upload-img-profile"
+                      accept="image/*"
+                      className={styles.hiddenInput}
+                      onChange={handleImageUploadProfile}
+                    />
                   </div>
+
+                  <div
+                    className={`${styles.cardInput} ${
+                      nameError ? styles.errorInput : ""
+                    }`}>
+                    <input
+                      type="text"
+                      value={name}
+                      onChange={handleNameChange}
+                    />
+                  </div>
+
+                  <div
+                    className={`${styles.cardInput} ${
+                      descriptionError ? styles.errorInput : ""
+                    }`}>
+                    <textarea
+                      value={description}
+                      onChange={handleDescriptionChange}></textarea>
+                  </div>
+
+                  <div
+                    className={`${styles.contentAvatar} ${styles.contentImg}`}>
+                    <label
+                      htmlFor="upload-img-content"
+                      className={`${styles.uploadLabel} ${
+                        !hasUploadedContent ? styles.errorText : ""
+                      }`}>
+                      {hasUploadedContent ? (
+                        <>
+                          <img src="Assets/Upload_Files.svg" alt="icon_arrow" />
+                          <span>{uploadedImageNameContent}</span>
+                        </>
+                      ) : (
+                        <>
+                          <img src="Assets/Upload_Files.svg" alt="icon_arrow" />
+                          <div className={styles.decription}>Upload image</div>
+                        </>
+                      )}
+                    </label>
+
+                    <input
+                      type="file"
+                      id="upload-img-content"
+                      accept="image/*"
+                      className={styles.hiddenInput}
+                      onChange={handleImageUploadContent}
+                    />
+                  </div>
+
+                  <div
+                    className={`${styles.contentAvatar} ${styles.contentImg}`}></div>
                 </div>
               </div>
             </div>
+
             <div className={styles.btnClose}>
-              <div  className={styles.btnSave} >
+              <div className={styles.btnSave}>
                 <button type="submit" onClick={handleSaveClick}>
                   Save
                 </button>
               </div>
-              <div>
-                <button className={styles.btnCancel} onClick={closeModal}>
-                  Cancel
-                </button>
+              <div className={styles.btnCancel} onClick={closeModal}>
+                Cancel
               </div>
             </div>
-            {/* {isSaved && (
-              <div className={styles.successMessage}>Saved successfully!</div>
-            )} */}
           </div>
-        </div>                                                      
+        </div>
       </div>
     </form>
   );
 };
-
 export default Index;
