@@ -1,38 +1,37 @@
 .container {
-    gap: 88px;
-    display: flex;
-    justify-content: flex-start;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    max-width: 1106px;
-    margin: 0 auto;
-  }
-  .searchUndefined {
-    padding-top: 28px;
-    color: #000;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 50px;
-  }
-  .textResult {
-    color: #064ebc;
-    font-size: 25px;
-    margin: 20px 0 10px;
-    text-align: center;
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 25px;
-  }
-  
-  .messenger {
-    color: #000;
-    font-size: 18px;
-    text-align: center;
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-weight: 400;
-    line-height: 25px;
-  }
-  
+  gap: 88px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 1106px;
+  margin: 0 auto;
+}
+.searchUndefined {
+  padding-top: 28px;
+  color: #000;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+.textResult {
+  color: #064ebc;
+  font-size: 25px;
+  margin: 20px 0 10px;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.messenger {
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 25px;
+}

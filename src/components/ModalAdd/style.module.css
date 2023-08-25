@@ -9,14 +9,12 @@
   width: 514px;
   margin: 0 auto;
   background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
   border: 1px solid #d2cbcb;
   border-radius: 10px;
 }
 
 .mainContent {
-  width: 433px;
-  margin: 25px 21px 25px 45px;
+  margin: 25px 43px 25px 45px;
 }
 
 .modalHeader {
@@ -26,9 +24,7 @@
   color: #000000;
   margin-bottom: 40px;
 }
-.cardText ul {
-  padding: 0px;
-}
+
 .cardText li {
   list-style: none;
   margin-bottom: 27px;
@@ -46,24 +42,18 @@
 
 .modalBody {
   max-height: 197px;
-  gap: 15px;
+  justify-content: space-between;
   display: flex;
   border-bottom: 1px solid #d9d9d9;
 }
 
-.contentAvatar .updateImage {
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 6px 6px;
-  outline: none;
-  box-shadow: none;
+ .contentAvatar {
+  display: flex;
+  margin-bottom: 20px;
 }
 
-.contentAvatar {
+.contentAvatar label {
   display: flex;
-  /* margin-bottom: 20px; */
 }
 
 .cardInput input {
@@ -73,22 +63,14 @@
   width: 100%;
   box-sizing: border-box;
   min-width: 322px;
-  padding: 8px 6px;
+  padding: 5px 6px;
   outline: none;
-  box-shadow: none;
-}
-.bodycardInput{
-  display: flex;
- 
-}
-.cardInput {
-  display: flex;
-  flex-direction: column;
-  gap: 8%;
-  margin-right: 8px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .cardInput textarea {
+  overflow: hidden;
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
@@ -96,9 +78,10 @@
   box-sizing: border-box;
   min-width: 322px;
   outline: none;
-  max-height: 39px;
-  padding: 8px 6px;
-  /* margin-bottom: 16px; */
+  font-size: 18px;
+  max-height: 34px;
+  padding: 5px 6px;
+  margin-bottom: 16px;
 }
 
 .contentAvatar img {
@@ -111,30 +94,33 @@
 
 .btnClose {
   display: flex;
+  color: #ffffff;
   justify-content: end;
   margin-right: 43px;
   margin-bottom: 19px;
 }
 
-.btnSave  button {
+.btnSave button {
   background: #064ebc 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
   padding: 13px 24px;
-  color: #ffffff;
   font: normal normal bold 13px/17px Segoe UI;
   margin-right: 20px;
-  border: none;
+  border-width: 0px;
+  color: #ffffff;
+}
+
+.btnSave button:hover {
+  cursor: pointer;
 }
 
 .btnCancel {
-  color: #ffffff;
   background: #d9d9d9 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
   padding: 13px 18px;
   font: normal normal bold 13px/17px Segoe UI;
-  border: none;
 }
 
 .btnSave,
@@ -147,9 +133,10 @@
 }
 
 .uploadLabel {
+  display: inline-block;
   cursor: pointer;
-  display: flex;
 }
+
 .errorText {
   color: #f3115e;
   filter: brightness(0) saturate(100%) invert(59%) sepia(96%) saturate(6764%)
@@ -160,78 +147,95 @@
 .errorInput textarea {
   border-color: #f3115e;
 }
-.contentImg label{
+
+/* CSS card Delete */
+.deleteBody {
+  display: block;
+  text-align: center;
+  font: normal normal normal 16px/21px Segoe UI;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.deleteBody img {
+  padding-bottom: 16px;
   display: flex;
+  margin: 0 auto;
+}
+
+.deleteBody img:hover {
+  cursor: pointer;
+}
+
+.decriptionDelete {
+  margin-bottom: 20px;
 }
 
 
-@media (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .modalContent {
-    width: 100%;
+    width: auto;
   }
 
   .modalHeader {
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-
-  .cardText ul {
-    padding: 0;
-    margin-left: -30px;
+    margin-bottom: 25px;
   }
 
   .cardText li {
-    font-size: 14px;
-    margin-bottom: 15px;
+    font: normal normal normal 17px/21px Segoe UI;
+    margin-bottom: 42px;
   }
 
   .modalBody {
-    max-height: 150px;
-
-    align-items: center;
-    border-bottom: none;
+    max-height: 100%;
+    position: relative;
   }
 
   .contentAvatar {
-    margin-bottom: 15px;
-    margin-left: 0px;
+    position: absolute;
+    top: 27px;
+    left: 0px;
   }
 
-  .cardInput {
-    margin-left: 5px;
-    margin-top: 5px;
+  .contentImg {
+    position: absolute;
+    top: 235px;
+    left: 0px;
   }
 
-  .cardInput input,
+  .cardInput input {
+    position: absolute;
+    top: 83px;
+    left: 0;
+    min-width: 0;
+    font-size: 20px;
+    padding: 8px 6px;
+  }
+
   .cardInput textarea {
-    min-width: 95%;
-    padding: 5px;
+    position: absolute;
+    top: 161px;
+    left: 0;
+    font-size: 20px;
+    min-width: 0;
+    padding: 9px 6px;
+    max-height: 46px;
   }
 
-  .cardInput {
-    width: 96%;
-    gap: 5%;
+  .cardText li:nth-child(3) {
+    margin-bottom: 56px;
   }
 
-  .btnClose,
-  .btnSave,
-  .btnCancel {
-    font-size: 12px;
-    margin-bottom: 10px;
-    width: 94%;
+  .cardText li:nth-child(2) {
+    margin-bottom: 50px;
   }
 
-  .btnSave {
-    width: 89%;
-    text-align: center;
-  }
- 
-  .btnSave,
-  .btnCancel {
-    padding: 10px 15px;
+  .btnClose {
+    margin-right: 90px;
+    margin-left: 90px;
   }
 
-  .decription {
-    font-size: 14px;
+  .mainContent {
+    margin: 25px 33px 25px;
   }
 }

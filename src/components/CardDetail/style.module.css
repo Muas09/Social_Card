@@ -1,8 +1,9 @@
 .container {
   max-width: 1160px;
   margin: 0 auto;
-  align-items: center;
   color: #000000;
+  margin-top: 50px;
+  margin-bottom: 160px;
 }
 
 .header {
@@ -74,17 +75,19 @@
   color: #5b7083;
   margin-bottom: 5px;
 }
-
+.contentImg {
+  margin-top: 30px;
+}
 .messageComment {
   margin-bottom: 15px;
 }
 
-.contentComment:last-child {
+.c ontentComment:last-child {
   border-bottom: 1px solid #d9d9d9;
 }
 
 .contentComment:last-child .messageComment:last-child {
-  padding-bottom: 15px;
+  padding-bottom: 14px;
 }
 
 .postComment {
@@ -93,23 +96,26 @@
   position: relative;
 }
 .textPost {
+  margin-top: 30px;
   font: normal normal 600 18px/24px Segoe UI;
+  margin-bottom: 15px;
 }
 
 .postComment textarea {
-  background: #ffffff 0% 0% no-repeat padding-box;
+  background: #fff 0 0 no-repeat padding-box;
   border: 1px solid #d9d9d9;
   border-radius: 10px;
-  width: 100%;
   outline: none;
-  padding: 20px 10px 94px 10px;
+  box-sizing: border-box;
+  padding: 20px 0 94px 20px;
+  width: 100%;
 }
 
 .btnPost {
-  border: none;
   position: absolute;
-  right: 18px;
-  top: 62.5%;
+  right: 20px;
+  top: 65.5%;
+  border-width: 0;
   font: normal normal bold 13px/17px Segoe UI;
   color: #ffffff;
   padding: 13px 25px;
@@ -121,117 +127,22 @@
 .commentTextarea::placeholder {
   font: normal normal normal 13px/17px Segoe UI;
   color: #d9d9d9;
-  padding-left: 20px;
 }
 
 .btnPost:hover {
   cursor: pointer;
-  
 }
-textarea.errorPost{
+
+textarea.errorPost {
   border-color: #f3115e;
 }
-.emptyComment {
-  border: 1px solid #F3115E;
-}
 
-
-@media (min-width: 300px) and (max-width: 768px) {
-  .container {
-    padding: 0;
-    margin: 0;
-  }
-  .header {
-    font-size: 28px;
-    margin-bottom: 15px;
-  }
-
-  .profileDetail {
-    align-items: flex-start;
-    margin-bottom: 10px;
-  }
-
-  .profileDetail img {
-    margin-bottom: 10px;
-  }
-
-  .profileName {
-    font-size: 16px;
-    margin-bottom: 3px;
-  }
-
-  .dayCreate {
-    font-size: 14px;
-  }
-
-  .content,
-  .contentComment {
-    font-size: 14px;
-    margin-bottom: 15px;
-  }
-
+@media (max-width: 768px) {
   .contentImg {
-    margin-bottom: 20px;
+    width: 310px;
   }
 
-  .icon,
-  .iconHeart,
-  .iconMessage {
-    border-bottom: none;
-    margin-bottom: 20px;
-  }
-
-  .iconHeart,
-  .IionMessage {
-    margin-right: 20px;
-  }
-
-  .iconHeart img,
-  .iconMessage img {
-    margin-right: 3px;
-  }
-
-  .dayComment {
-    font-size: 14px;
-    margin-bottom: 3px;
-  }
-
-  .contentComment:last-child {
-    border-bottom: none;
-  }
-
-  .contentComment:last-child .MessageComment:last-child {
-    padding-bottom: 5px;
-  }
-
-  .postComment {
-    max-width: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .textPost {
-    font-size: 14px;
-  }
-
-  .postComment textarea {
-    padding: 15px 0;
-  }
-
-  .btnPost {
-    right: 10px;
-    top: 60%;
-    border-radius: 7px;
-    font-size: 12px;
-    padding: 5px 13px;
-  }
-
-  .CommentTextarea::placeholder {
-    font-size: 12px;
-    padding-left: 15px;
-  }
-
-  .btnPost:hover {
-    cursor: pointer;
+  .container {
+    padding: 25px 20px;
   }
 }

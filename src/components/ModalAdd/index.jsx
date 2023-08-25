@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 
@@ -10,6 +12,9 @@ const Index = ({ closeModal }) => {
   const [uploadedImageNameContent, setUploadedImageNameContent] =
     useState(null);
   const [hasUploadedContent, setHasUploadedContent] = useState(false);
+
+  const [newDataItem, setNewDataItem] = useState(null);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleImageUploadProfile = (e) => {
     console.log("Uploading profile image...");
@@ -106,22 +111,29 @@ const Index = ({ closeModal }) => {
     setNameError(name === "");
     setDescriptionError(description === "");
 
+    try {
+      // Các bước xử lý
+      console.log("Thông tin đã được lưu:", newDataItem);
+      closeModal();
+      setIsSuccess(true);
+      toast.success("Đã lưu thông tin thành công!"); // Hiển thị thông báo thành công
+    } catch (error) {
+      console.error("Lỗi trong quá trình tải lên hình ảnh:", error);
+    }
+
     if (
       !name ||
       !description ||
       !uploadedImageNameProfile ||
       !uploadedImageNameContent
     ) {
-      return; // Không thực hiện lưu nếu có ô input nào còn trống
+      return;
     }
 
-    // Lấy dữ liệu từ local storage (nếu có)
     const existingData = JSON.parse(localStorage.getItem("cardData")) || [];
 
-    // Kiểm tra nếu existingData không phải mảng, thì tạo một mảng rỗng
     const dataArray = Array.isArray(existingData) ? existingData : [];
 
-    // Kiểm tra và đợi tải lên các tệp lên Cloudinary
     const profileImg = document.getElementById("upload-img-profile");
     const contentImg = document.getElementById("upload-img-content");
     const allFiles = [...profileImg.files, ...contentImg.files];
@@ -129,7 +141,6 @@ const Index = ({ closeModal }) => {
     try {
       const uploadedUrls = await uploadFiles(allFiles);
 
-      // Lưu Name và Description vào Local Storage
       const newDataItem = {
         name,
         description,
@@ -137,10 +148,8 @@ const Index = ({ closeModal }) => {
         img: uploadedUrls[1],
       };
 
-      // Thêm mục mới vào danh sách dữ liệu cũ
       const updatedData = [...dataArray, newDataItem];
 
-      // Lưu danh sách dữ liệu cập nhật vào local storage
       localStorage.setItem("cardData", JSON.stringify(updatedData));
       resetForm();
       console.log("Thông tin đã được lưu:", newDataItem);
@@ -164,24 +173,22 @@ const Index = ({ closeModal }) => {
   return (
     <form action="" id="form-add">
       <div className={styles.newCard}>
-        <div className={styles.modelAdd}>
-          <div className={styles.modelContent}>
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
             <div className={styles.mainContent}>
               <div className={styles.modalHeader}>Add new card</div>
               <div className={styles.modalBody}>
                 <div className={styles.cardText}>
-                  <ul>
-                    <li className={!hasUploadedProfile ? styles.errorText : ""}>
-                      Avatar
-                    </li>
-                    <li className={nameError ? styles.errorText : ""}>Name</li>
-                    <li className={descriptionError ? styles.errorText : ""}>
-                      Decription
-                    </li>
-                    <li className={!hasUploadedContent ? styles.errorText : ""}>
-                      Image
-                    </li>
-                  </ul>
+                  <li className={!hasUploadedProfile ? styles.errorText : ""}>
+                    Avatar
+                  </li>
+                  <li className={nameError ? styles.errorText : ""}>Name</li>
+                  <li className={descriptionError ? styles.errorText : ""}>
+                    Decription
+                  </li>
+                  <li className={!hasUploadedContent ? styles.errorText : ""}>
+                    Image
+                  </li>
                 </div>
                 <div className={styles.cardInput}>
                   <div className={styles.contentAvatar}>
@@ -262,7 +269,7 @@ const Index = ({ closeModal }) => {
                   </div>
 
                   <div
-                    className={`${styles.contentAvatar} ${styles.contentImg}`}></div>
+                    className={`${styles.ContentAvatar} ${styles.contentImg}`}></div>
                 </div>
               </div>
             </div>
@@ -279,8 +286,16 @@ const Index = ({ closeModal }) => {
             </div>
           </div>
         </div>
+        <ToastContainer position="top-center" autoClose={3000} /> {/* Thêm ToastContainer */}
       </div>
+
+      {isSuccess && (
+        <div className={styles.successMessage}>
+          <p>Đã lưu thông tin thành công!</p>
+        </div>
+      )}
     </form>
   );
 };
+
 export default Index;

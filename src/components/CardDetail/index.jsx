@@ -4,15 +4,15 @@ import React, { useEffect, useState } from "react";
 const Index = ({ setShowContainer }) => {
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      event.preventDefault(); // Ngăn người dùng nhập xuống dòng trong textarea
-      handlePostClick(); // Thực hiện post comment khi nhấn Enter
+      event.preventDefault();
+      handlePostClick();
     }
   };
 
   useEffect(() => {
-    setShowContainer(false); // Hide Container in CardDetail page
+    setShowContainer(false);
     return () => {
-      setShowContainer(true); // Reset when leaving CardDetail page
+      setShowContainer(true);
     };
   }, [setShowContainer]);
 
@@ -23,13 +23,12 @@ const Index = ({ setShowContainer }) => {
     setMessageCount(existingComments.length);
   }, []);
 
-  // const [comment, setComment] = useState("");
   const [commentError, setCommentError] = useState(false);
 
-  const [inputComment, setInputComment] = useState(""); // Biến mới để lưu nội dung comment trong ô input
+  const [inputComment, setInputComment] = useState("");
   const handleCommentChange = (event) => {
     const value = event.target.value;
-    setInputComment(value); // Sử dụng biến newComment thay cho comment
+    setInputComment(value);
     setCommentError(value === "");
   };
 
@@ -37,7 +36,6 @@ const Index = ({ setShowContainer }) => {
     if (!commentError && inputComment !== "") {
       setIsCommentPosted(true);
 
-      // Lưu comment vào local storage
       const currentDate = new Date();
       const formattedDate = `${currentDate.getDate()}/${
         currentDate.getMonth() + 1
@@ -47,19 +45,15 @@ const Index = ({ setShowContainer }) => {
         content: inputComment,
       };
 
-      // Lấy danh sách các comment từ local storage (nếu đã có)
       const existingComments = JSON.parse(
         localStorage.getItem("comments") || "[]"
       );
 
-      // Thêm comment mới vào danh sách
       existingComments.push(newComment);
 
-      // Lưu lại danh sách comment vào local storage
       localStorage.setItem("comments", JSON.stringify(existingComments));
 
-      // Cập nhật số lượng comment và thực hiện các xử lý khác khi post thành công
-      setMessageCount(existingComments.length); // Cập nhật số lượng comment
+      setMessageCount(existingComments.length);
       setCommentError(false);
       setInputComment("");
     } else {
@@ -68,17 +62,13 @@ const Index = ({ setShowContainer }) => {
     }
   };
 
-  // Số lượt nhấn mặc định là 2
   const [heartCount, setHeartCount] = useState(1);
-  const [messageCount, setMessageCount] = useState(1);
+  const [messageCount, setMessageCount] = useState(2);
   const [isCommentPosted, setIsCommentPosted] = useState(false);
 
   return (
-    <div>
-      <div>
-        <div className={styles.title}>LIST SOCIAL CARD</div>
-      </div>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.header}>SOCIAL CARD DETAIL</div>
       <div className={styles.profileDetail}>
         <img src="Assets/Avatar_PhuNguyen.svg" alt="" />
         <div>
@@ -86,7 +76,7 @@ const Index = ({ setShowContainer }) => {
           <div className={styles.dayCreate}>22/04/2021 (day create)</div>
         </div>
       </div>
-      <div className={styles.content}>
+      <div className={styles.Content}>
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout. The point of
         using Lorem Ipsum is that it has a more- or-less normal distribution of
@@ -100,7 +90,7 @@ const Index = ({ setShowContainer }) => {
 
       <img
         className={styles.contentImg}
-        src="https://xedulichhue.com/wp-content/uploads/2018/07/dai-noi-hue-co-bao-nhieu-cua.jpg"
+        src="https://huenews.net/wp-content/uploads/2019/11/kinh-thanh-hue-ngo-mon-660x330.jpeg"
         alt=""
       />
 
@@ -108,8 +98,8 @@ const Index = ({ setShowContainer }) => {
         <div
           className={styles.iconHeart}
           onClick={() => setHeartCount(heartCount + 1)}>
-          <img src="Assets/Icon_Heart.svg" alt="" />{" "}
-          <span id="heartCount">{heartCount}</span>
+          <img src="Assets/Heart_Solid.svg" alt="" />
+          {heartCount}
         </div>
 
         <div
@@ -120,16 +110,6 @@ const Index = ({ setShowContainer }) => {
         </div>
       </div>
 
-      <div className={styles.contentComment}>
-        <div className={styles.dayComment}>22/04/2021 (day create)</div>
-        <div className={styles.messageComment}>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more- or-less normal distribution
-          of letters, as opposed to using 'Content here, content here', making
-          it look like readable English.
-        </div>
-      </div>
       <div>
         {localStorage.getItem("comments") &&
           JSON.parse(localStorage.getItem("comments"))
@@ -145,7 +125,16 @@ const Index = ({ setShowContainer }) => {
               </div>
             ))}
 
-      
+        <div className={styles.contentComment}>
+          <div className={styles.dayComment}>22/04/2021 (day create)</div>
+          <div className={styles.messageComment}>
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more- or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+            here', making it look like readable English.
+          </div>
+        </div>
       </div>
 
       <div className={styles.postComment}>
@@ -169,9 +158,7 @@ const Index = ({ setShowContainer }) => {
         </button>
       </div>
     </div>
-    </div>
   );
 };
 
 export default Index;
-

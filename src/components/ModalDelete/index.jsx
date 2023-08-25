@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./style.module.css";
 
-const DeleteCard = () => {
-  const [modalVisible, setModalVisible] = useState(true);
-
-  const handleCancelClick = () => {
-    setModalVisible(false); 
-  };
-
+const index = ({ closeModal, deleteContent }) => {
   return (
     <div className={styles.deleteCard}>
       <div className={styles.modal}>
@@ -25,8 +19,12 @@ const DeleteCard = () => {
           </div>
 
           <div className={styles.btnClose}>
-            <button className={styles.btnSave}>Delete</button>
-            <button className={styles.btnCancel} onClick={handleCancelClick}>Cancel</button>
+            <div className={styles.btnSave} onClick={deleteContent}>
+              Delete
+            </div>
+            <div className={styles.btnCancel} onClick={closeModal}>
+              Cancel
+            </div>
           </div>
         </div>
       </div>
@@ -34,4 +32,4 @@ const DeleteCard = () => {
   );
 };
 
-export default DeleteCard;
+export default index;

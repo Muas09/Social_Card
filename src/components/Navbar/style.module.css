@@ -7,11 +7,10 @@
 }
 
 .btnAdd {
-  border: none;
   margin-right: 20px;
   padding: 15px 30px;
   color: #fff;
-  font-family: "Segoe UI", sans-serif;
+  font-family: Segoe UI;
   font-size: 15px;
   font-weight: 400;
   border-radius: 10px;
@@ -23,7 +22,7 @@
   cursor: pointer;
 }
 
-input[type="text"] {
+.searchName input[type="text"] {
   border-radius: 10px;
   background: #fff;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
@@ -35,7 +34,7 @@ input[type="text"] {
   padding: 15px 95px 14px 24px;
 }
 
-.btnSearch {
+.search {
   display: flex;
   align-items: center;
 }
@@ -43,42 +42,64 @@ input[type="text"] {
 .iconSearch {
   position: absolute;
   right: 14px;
+}
+
+.iconSearch {
   cursor: pointer;
-  margin-top: 8px;
 }
 
 .searchName input::placeholder {
   color: #dfdfdf;
-  font-family: "Segoe UI", sans-serif;
+  font-family: Segoe UI;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
 }
-
-
-@media (min-width: 300px) and (max-width: 768px) {
+/* 
+@media (max-width: 768px) {
   .navbar {
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-
-  .btnAdd {
-    width: 25%;
-    padding: 13px 8px;
-    font-size: 12px;
-  }
-
-  input[type="text"] {
-    font-size: 13px;
-    padding: 12px 80px 11px 16px;
+    
   }
 
   .iconSearch {
-    right: 10px;
+    right: 8px;
   }
-
-  .searchName input::placeholder {
+  .search {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .btnAdd {
+    margin-right: 0px;
+  }
+} */
+@media screen and (min-width: 378px) and (max-width: 768px) {
+  .navbar {
+    justify-content: center; 
+    margin-bottom: 20px; 
+  }
+  
+  .btnAdd {
+    width: 21%;
+    padding: 13px 24px;
     font-size: 13px;
+    margin-top: 8px;
   }
- 
+  
+  .searchName input[type="text"] {
+    padding: 10px 70px 10px 14px; 
+  }
+  
+  .iconSearch {
+    right: 8px; 
+  }
+  
+  .searchName input::placeholder {
+    font-size: 14px;
+  }
 }
+
+
+
+
+
+

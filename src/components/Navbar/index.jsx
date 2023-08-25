@@ -1,81 +1,55 @@
-import React, { useState } from "react";
 import styles from "./style.module.css";
+import Modal from "react-modal";
+import React from "react";
 import ModalAdd from "../ModalAdd";
-import Modal from "react-modal"; // Don't forget to import Modal
-// import NotFound from "../NotFound";
-
 const customStyles = {
   content: {
-    width: "514px",
-    height: "379px",
     top: "50%",
     left: "50%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    padding: 0,
-    border: "1px solid #D2CBCB",
-    overflow: "none",
-    background: "#FFFFFF",
-    boxShadow: "0px 3px 6px #00000029",
-    borderRadius: "10px",
-    opacity: 1,
+    padding: "0px",
+    border: "none",
+    boxShadow: "none",
+    background: "none",
   },
 };
-if (window.innerWidth < 768) {
-  customStyles.content.width = "80%";
-  customStyles.content.height = "auto";
-  customStyles.content.maxHeight = "80vh";
-  customStyles.content.padding = "10px";
-  customStyles.content.boxShadow = "0px 2px 4px #00000029";
-}
 
 const Index = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-  const handleUpdateClick = () => {
-    setIsModalOpen(true);
-  };
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
-  const handleSearch = () => {
-    // Perform search logic using 'searchTerm'
-  };
+  function openModal() {
+    setIsOpen(true);
+  }
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
     <div>
       <div className={styles.navbar}>
-        <button onClick={handleUpdateClick} className={styles.btnAdd}>
+        <div className={styles.btnAdd} onClick={openModal}>
           Add new
-        </button>
-        <div className={styles.btnSearch}>
+        </div>
+        <div className={styles.search}>
           <div className={styles.searchName}>
-            <input
-              type="text"
-              placeholder="Search name..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
+            <input type="text" placeholder="Search name..." />
           </div>
           <div className={styles.iconSearch}>
-            <img src="Assets/Icon_Search.svg" alt="" onClick={handleSearch} />
+            <img src="Assets/Icon_Search.svg" alt="" />
           </div>
-          <Modal
-            isOpen={isModalOpen}
-            onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Add New Modal"
-            className={styles.customModal}
-            overlayClassName={styles.customOverlay}>
-            <ModalAdd onClose={closeModal} />
-          </Modal>
         </div>
       </div>
-      {/* <NotFound /> */}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal">
+        <ModalAdd closeModal={closeModal}></ModalAdd>
+      </Modal>
     </div>
   );
 };

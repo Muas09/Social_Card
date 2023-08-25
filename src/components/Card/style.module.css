@@ -4,7 +4,17 @@
   justify-content: flex-start;
   align-content: flex-start;
   flex-wrap: wrap;
+  max-width: 1106px;
   margin: 0 auto;
+}
+
+.content {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .header {
@@ -14,7 +24,7 @@
   margin-bottom: 15px;
 }
 
-.profile {
+.Profile {
   color: #000;
   font-size: 17px;
   font-style: normal;
@@ -23,31 +33,34 @@
   align-items: center;
 }
 
-.profile img {
+.Profile img {
   margin-right: 15px;
 }
 
-.profile,
+.Profile,
 .editIcon,
 .deleteIcon {
   cursor: pointer;
 }
 
-.profile .birthday {
+.Profile .date {
   margin-top: 4px;
   color: #5b7083;
   font-size: 14px;
 }
-.deleteIcon {
-  width: 18px;
-  height: 21px;
-  flex-shrink: 0;
+
+.Profile img{
+ max-width: 50px;
+ max-height: 50px;
 }
+
+.img img{
+  max-width: 310px;
+  max-height: 206px;
+}
+
 .editIcon {
   margin-right: 17px;
-  width: 18px;
-  height: 21px;
-  flex-shrink: 0;
 }
 
 .header .icon {
@@ -69,81 +82,18 @@
 
 .content {
   margin-bottom: 52px;
-  color: #000;
-  font-family: Segoe UI;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
 }
 
-.descriptionMio .TextResult {
-  color: #064ebc;
-  font-size: 25px;
-  margin: 20px 0 10px;
-}
-
-.descriptionMio .Messenger {
-  color: #000;
-  font-size: 18px;
-}
-a {
-  text-decoration: none;
-}
-
-@media (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .body {
-    max-width: 400px;
-    display: block;
-    gap: 16px;
+    gap: 30px;
+    margin: 0 20px;
     justify-content: center;
-    align-content: center;
   }
+}
 
-  .header {
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
-  .profile {
-    gap: 8%;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  .profile img {
-    margin-right: 0;
-    width: 30%;
-    height: 30%;
-  }
-
-  .editIcon,
-  .deleteIcon {
-    margin: 0 5px;
-  }
-
-  .description {
-    max-width: 100%;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  .content {
-    margin-bottom: 30px;
-    font-size: 14px;
-    line-height: 18px;
-  }
-
-  .descriptionMio .TextResult {
-    font-size: 20px;
-    margin: 15px 0 8px;
-  }
-
-  .descriptionMio .Messenger {
-    font-size: 16px;
-  }
-  .img {
-    text-align: center;
-    width: 100%;
+@media (min-width: 768px) {
+  .body {
+    margin: 0 auto;
   }
 }
