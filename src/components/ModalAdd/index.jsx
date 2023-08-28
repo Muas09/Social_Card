@@ -1,6 +1,4 @@
 import axios from "axios";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 
@@ -12,9 +10,6 @@ const Index = ({ closeModal }) => {
   const [uploadedImageNameContent, setUploadedImageNameContent] =
     useState(null);
   const [hasUploadedContent, setHasUploadedContent] = useState(false);
-
-  const [newDataItem, setNewDataItem] = useState(null);
-  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleImageUploadProfile = (e) => {
     console.log("Uploading profile image...");
@@ -48,7 +43,7 @@ const Index = ({ closeModal }) => {
     };
 
     if (form) {
-      form.addEventListener("submit", handleFormSubmit); //remove submit event
+      form.addEventListener("submit", handleFormSubmit);
     }
 
     return () => {
@@ -57,7 +52,6 @@ const Index = ({ closeModal }) => {
       }
     };
   }, []);
-  // Empty dependency array means this effect runs once after initial render
 
   const uploadFiles = async (files) => {
     if (files) {
@@ -89,7 +83,6 @@ const Index = ({ closeModal }) => {
     }
   };
 
-  //  Validate
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [nameError, setNameError] = useState(false);
@@ -110,16 +103,6 @@ const Index = ({ closeModal }) => {
   const handleSaveClick = async () => {
     setNameError(name === "");
     setDescriptionError(description === "");
-
-    try {
-      // Các bước xử lý
-      console.log("Thông tin đã được lưu:", newDataItem);
-      closeModal();
-      setIsSuccess(true);
-      toast.success("Đã lưu thông tin thành công!"); // Hiển thị thông báo thành công
-    } catch (error) {
-      console.error("Lỗi trong quá trình tải lên hình ảnh:", error);
-    }
 
     if (
       !name ||
@@ -169,7 +152,6 @@ const Index = ({ closeModal }) => {
     setNameError(false);
     setDescriptionError(false);
   };
-
   return (
     <form action="" id="form-add">
       <div className={styles.newCard}>
@@ -286,14 +268,7 @@ const Index = ({ closeModal }) => {
             </div>
           </div>
         </div>
-        <ToastContainer position="top-center" autoClose={3000} /> {/* Thêm ToastContainer */}
       </div>
-
-      {isSuccess && (
-        <div className={styles.successMessage}>
-          <p>Đã lưu thông tin thành công!</p>
-        </div>
-      )}
     </form>
   );
 };
