@@ -9,6 +9,7 @@
 }
 
 .content {
+  width: 310px;
   cursor: pointer;
   text-decoration: none;
 }
@@ -24,7 +25,7 @@ a {
   margin-bottom: 15px;
 }
 
-.Profile {
+.profile {
   color: #000;
   font-size: 17px;
   font-style: normal;
@@ -33,30 +34,30 @@ a {
   align-items: center;
 }
 
-.Profile img {
+.profile img {
   margin-right: 15px;
 }
 
-.Profile,
+.profile,
 .editIcon,
 .deleteIcon {
   cursor: pointer;
 }
 
-.Profile .date {
+.profile .date {
   margin-top: 4px;
   color: #5b7083;
   font-size: 14px;
 }
 
-.Profile img{
- max-width: 50px;
- max-height: 50px;
+.profile img {
+  width: 50px;
+  height: 50px;
 }
 
-.img img{
-  max-width: 310px;
-  max-height: 206px;
+.img img {
+  width: 310px;
+  height: 206px;
 }
 
 .editIcon {

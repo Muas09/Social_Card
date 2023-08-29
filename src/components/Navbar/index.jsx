@@ -17,8 +17,13 @@ const customStyles = {
   },
 };
 
-const Index = () => {
+const Index = ({ onSearchChange }) => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const handleSearchChange = (event) => {
+    const searchTerm = event.target.value;
+    onSearchChange(searchTerm);  // Gửi dữ liệu tìm kiếm lên cho component cha
+  };
 
   function openModal() {
     setIsOpen(true);
@@ -27,7 +32,6 @@ const Index = () => {
   function closeModal() {
     setIsOpen(false);
   }
-
   return (
     <div>
       <div className={styles.navbar}>
@@ -36,7 +40,11 @@ const Index = () => {
         </div>
         <div className={styles.search}>
           <div className={styles.searchName}>
-            <input type="text" placeholder="Search name..." />
+            <input
+              type="text"
+              placeholder="Search name..."
+              onChange={handleSearchChange}
+            />
           </div>
           <div className={styles.iconSearch}>
             <img src="Assets/Icon_Search.svg" alt="" />
