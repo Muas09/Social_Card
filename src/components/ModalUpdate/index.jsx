@@ -71,7 +71,7 @@ const Index = ({ closeModal, editedData }) => {
       }
     };
   }, []);
-  // Empty 
+  // Empty
   const uploadFiles = async (files) => {
     if (files) {
       const CLOUD_NAME = "dgyrw4fbm";
@@ -196,7 +196,6 @@ const Index = ({ closeModal, editedData }) => {
     setDescriptionError(false);
   };
   return (
-
     <form action="" id="form-add">
       <div className={styles.newCard}>
         <div className={styles.modal}>

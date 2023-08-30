@@ -1,7 +1,8 @@
 import styles from "./style.module.css";
 import Modal from "react-modal";
-import React from "react";
+import React, { useState } from "react";
 import ModalAdd from "../ModalAdd";
+
 const customStyles = {
   content: {
     top: "50%",
@@ -22,7 +23,7 @@ const Index = ({ onSearchChange }) => {
 
   const handleSearchChange = (event) => {
     const searchTerm = event.target.value;
-    onSearchChange(searchTerm);  // Gửi dữ liệu tìm kiếm lên cho component cha
+    onSearchChange(searchTerm); // Gửi dữ liệu tìm kiếm lên cho component cha
   };
 
   function openModal() {
@@ -42,8 +43,8 @@ const Index = ({ onSearchChange }) => {
           <div className={styles.searchName}>
             <input
               type="text"
-              placeholder="Search name..."
               onChange={handleSearchChange}
+              placeholder="Search"
             />
           </div>
           <div className={styles.iconSearch}>

@@ -56,8 +56,8 @@ a {
 }
 
 .img img {
-  width: 310px;
-  height: 206px;
+  max-width: 310px;
+  max-height: 206px;
 }
 
 .editIcon {

@@ -2,17 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 
-
-
-
 const Index = ({ closeModal }) => {
   const [uploadedImageNameProfile, setUploadedImageNameProfile] =
     useState(null);
   const [hasUploadedProfile, setHasUploadedProfile] = useState(false);
 
-  const [uploadedImageNameContent, setUploadedImageNameCard ] =
-    useState(null);
-  const [hasUploadedContent, setHasUploadedCard ] = useState(false);
+  const [uploadedImageNameContent, setUploadedImageNameCard] = useState(null);
+  const [hasUploadedContent, setHasUploadedCard] = useState(false);
 
   const handleImageUploadProfile = (e) => {
     console.log("Uploading profile image...");
@@ -29,8 +25,8 @@ const Index = ({ closeModal }) => {
     const file = e.target.files[0];
     if (file) {
       console.log("Content image selected:", file);
-      setUploadedImageNameCard (file.name);
-      setHasUploadedCard (true);
+      setUploadedImageNameCard(file.name);
+      setHasUploadedCard(true);
     }
   };
 
@@ -148,15 +144,14 @@ const Index = ({ closeModal }) => {
   const resetForm = () => {
     setUploadedImageNameProfile(null);
     setHasUploadedProfile(false);
-    setUploadedImageNameCard (null);
-    setHasUploadedCard (false);
+    setUploadedImageNameCard(null);
+    setHasUploadedCard(false);
     setName("");
     setDescription("");
     setNameError(false);
     setDescriptionError(false);
   };
   return (
-
     <form action="" id="form-add">
       <div className={styles.newCard}>
         <div className={styles.modal}>

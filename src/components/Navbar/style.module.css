@@ -55,51 +55,29 @@
   font-style: normal;
   font-weight: 400;
 }
-/* 
-@media (max-width: 768px) {
-  .navbar {
-    
-  }
 
-  .iconSearch {
-    right: 8px;
-  }
-  .search {
-    margin-bottom: 20px;
-    position: relative;
-  }
-  .btnAdd {
-    margin-right: 0px;
-  }
-} */
 @media screen and (min-width: 378px) and (max-width: 768px) {
   .navbar {
-    justify-content: center; 
-    margin-bottom: 20px; 
+    justify-content: center;
+    margin-bottom: 20px;
   }
-  
+
   .btnAdd {
     width: 21%;
     padding: 13px 24px;
     font-size: 13px;
     margin-top: 8px;
   }
-  
+
   .searchName input[type="text"] {
-    padding: 10px 70px 10px 14px; 
+    padding: 10px 70px 10px 14px;
   }
-  
+
   .iconSearch {
-    right: 8px; 
+    right: 8px;
   }
-  
+
   .searchName input::placeholder {
     font-size: 14px;
   }
 }
-
-
-
-
-
-
